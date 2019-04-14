@@ -4,6 +4,7 @@ require "hachi/version"
 
 require "hachi/api"
 
+require "hachi/models/base"
 require "hachi/models/alert"
 require "hachi/models/artifact"
 require "hachi/models/case"

@@ -5,7 +5,7 @@ require "securerandom"
 
 module Hachi
   module Models
-    class Alert
+    class Alert < Base
       attr_reader :title
       attr_reader :description
       attr_reader :severity
@@ -58,29 +58,11 @@ module Hachi
 
       private
 
-      def validate_severity
-        return true if severity >= 1 && severity <= 3
-
-        raise ArgumentError, "severity should be 1 - 3 (1: low; 2: medium; 3: high)."
-      end
-
       def validate_date
         DateTime.parse(date)
         true
       rescue ArgumentError => _
-        raise ArgumentError, "date should be Date format."
-      end
-
-      def validate_tlp
-        return true if tlp >= 0 && severity <= 3
-
-        raise ArgumentError, "tlp should be 0 - 3 (0: white; 1: green; 2: amber; 3: red)."
-      end
-
-      def validate_status
-        return true if %w(New Updated Ignored Imported).include?(status)
-
-        raise ArgumentError, "status should be New, Updated, Ignored or Imported"
+        raise ArgumentError, "date should be Date format"
       end
     end
   end
