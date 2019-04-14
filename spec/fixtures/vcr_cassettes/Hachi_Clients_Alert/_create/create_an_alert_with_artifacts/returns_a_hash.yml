@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/alert
+    body:
+      encoding: UTF-8
+      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"f97d29e096f85e0cabb4","artifacts":[{"data":"1.1.1.1","dataType":"ip","message":"test"},{"data":"github.com","dataType":"domain","tags":["test"]}]}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 14 Apr 2019 22:55:12 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '566'
+    body:
+      encoding: UTF-8
+      string: '{"date":1555282511812,"severity":2,"_routing":"f66a30687d2a51ce6e49f5f9d2bfe260","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555282511812,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1555282511811,"_parent":null,"createdBy":"test","tlp":2,"_id":"f66a30687d2a51ce6e49f5f9d2bfe260","id":"f66a30687d2a51ce6e49f5f9d2bfe260","sourceRef":"f97d29e096f85e0cabb4","_version":1,"artifacts":[{"data":"1.1.1.1","dataType":"ip","message":"test"},{"data":"github.com","dataType":"domain","tags":["test"]}],"status":"New"}'
+    http_version: 
+  recorded_at: Sun, 14 Apr 2019 22:55:12 GMT
+recorded_with: VCR 4.0.0

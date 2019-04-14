@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 RSpec.describe Hachi::Models::Artifact do
+  describe "#initialize" do
+    it "doesn't raise an error" do
+      described_class.new(data: "1.1.1.1", data_type: "ip")
+    end
+  end
+
   context "when given an invalid input" do
     it "raises an ArgumentError" do
       expect { described_class.new(data: "1.1.1.1", invalid: "hoge") }.to raise_error(ArgumentError)
