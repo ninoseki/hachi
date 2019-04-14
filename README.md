@@ -32,35 +32,35 @@ api.artifact.search(data: "1.1.1.1", data_type: "ip")
 
 ### Alert
 
-| HTTP Method | URI                               | Action                      | API method                    |
-|-------------|-----------------------------------|-----------------------------|-------------------------------|
-| GET         | /api/alert                        | List alerts                 | `#api.alert.list`             |
-| POST        | /api/alert/_search                | Find alerts                 | [x]                           |
-| PATCH       | /api/alert/_bulk                  | Update alerts in bulk       | [x]                           |
-| POST        | /api/alert/_stats                 | Compute stats on alerts     | [x]                           |
-| POST        | /api/alert                        | Create an alert             | `#api.alert.create`           |
-| GET         | /api/alert/:alertId               | Get an alert                | `#api.alert.get_by_id(id)`    |
-| PATCH       | /api/alert/:alertId               | Update an alert             | [x]                           |
-| DELETE      | /api/alert/:alertId               | Delete an alert             | `#api.alert.delete_by_id(id)` |
-| POST        | /api/alert/:alertId/markAsRead    | Mark an alert as read       | [x]                           |
-| POST        | /api/alert/:alertId/markAsUnread  | Mark an alert as unread     | [x]                           |
-| POST        | /api/alert/:alertId/createCase    | Create a case from an alert | [x]                           |
-| POST        | /api/alert/:alertId/follow        | Follow an alert             | [x]                           |
-| POST        | /api/alert/:alertId/unfollow      | Unfollow an alert           | [x]                           |
-| POST        | /api/alert/:alertId/merge/:caseId | Merge an alert in a case    | [x]                           |
+| HTTP Method | URI                               | Action                      | API method                                                                                                                                                          |
+|-------------|-----------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GET         | /api/alert                        | List alerts                 | `#api.alert.list`                                                                                                                                                   |
+| POST        | /api/alert/_search                | Find alerts                 | N/A                                                                                                                                                                 |
+| PATCH       | /api/alert/_bulk                  | Update alerts in bulk       | N/A                                                                                                                                                                 |
+| POST        | /api/alert/_stats                 | Compute stats on alerts     | N/A                                                                                                                                                                 |
+| POST        | /api/alert                        | Create an alert             | `#api.alert.create(title:, description:, severity: nil, date: nil, tags: nil, tlp: nil, status: nil, type:, source:, source_ref: nil, artifacts: nil, follow: nil)` |
+| GET         | /api/alert/:alertId               | Get an alert                | `#api.alert.get_by_id(id)`                                                                                                                                          |
+| PATCH       | /api/alert/:alertId               | Update an alert             | N/A                                                                                                                                                                 |
+| DELETE      | /api/alert/:alertId               | Delete an alert             | `#api.alert.delete_by_id(id)`                                                                                                                                       |
+| POST        | /api/alert/:alertId/markAsRead    | Mark an alert as read       | N/A                                                                                                                                                                 |
+| POST        | /api/alert/:alertId/markAsUnread  | Mark an alert as unread     | N/A                                                                                                                                                                 |
+| POST        | /api/alert/:alertId/createCase    | Create a case from an alert | N/A                                                                                                                                                                 |
+| POST        | /api/alert/:alertId/follow        | Follow an alert             | N/A                                                                                                                                                                 |
+| POST        | /api/alert/:alertId/unfollow      | Unfollow an alert           | N/A                                                                                                                                                                 |
+| POST        | /api/alert/:alertId/merge/:caseId | Merge an alert in a case    | N/A                                                                                                                                                                 |
 
 ### Artifact(Observable)
 
 | HTTP Method | URI                                    | Action                          | API method                                                                            |
 |-------------|----------------------------------------|---------------------------------|---------------------------------------------------------------------------------------|
 | POST        | /api/case/artifact/_search             | Find observables                | `#api.artifact.search(data:, date_type:)`                                             |
-| POST        | /api/case/artifact/_stats              | Compute stats on observables    | [x]                                                                                   |
+| POST        | /api/case/artifact/_stats              | Compute stats on observables    | N/A                                                                                   |
 | POST        | /api/case/:caseId/artifact             | Create an observable            | `#api.artifact.create(case_id, data:, data_type:, message: nil, tlp: nil, tags: nil)` |
 | GET         | /api/case/artifact/:artifactId         | Get an observable               | `#api.artifact.get_by_id(id)`                                                         |
 | DELETE      | /api/case/artifact/:artifactId         | Remove an observable            | `#api.artifact.delete_by_id(id)`                                                      |
-| PATCH       | /api/case/artifact/:artifactId         | Update an observable            | [x]                                                                                   |
-| GET         | /api/case/artifact/:artifactId/similar | Get list of similar observables | [x]                                                                                   |
-| PATCH       | /api/case/artifact/_bulk               | Update observables in bulk      | [x]                                                                                   |
+| PATCH       | /api/case/artifact/:artifactId         | Update an observable            | N/A                                                                                   |
+| GET         | /api/case/artifact/:artifactId/similar | Get list of similar observables | N/A                                                                                   |
+| PATCH       | /api/case/artifact/_bulk               | Update observables in bulk      | N/A                                                                                   |
 
 ### Case
 
@@ -68,14 +68,14 @@ api.artifact.search(data: "1.1.1.1", data_type: "ip")
 |-------------|------------------------------------|---------------------------------------|----------------------------------------------------------------------------------------------------------------------|
 | GET         | /api/case                          | List cases                            | `#api.case.list`                                                                                                     |
 | POST        | /api/case/_search                  | Find cases                            | `#api.case.search(query)`                                                                                            |
-| PATCH       | /api/case/_bulk                    | Update cases in bulk                  | [x]                                                                                                                  |
-| POST        | /api/case/_stats                   | Compute stats on cases                | [x]                                                                                                                  |
+| PATCH       | /api/case/_bulk                    | Update cases in bulk                  | N/A                                                                                                                  |
+| POST        | /api/case/_stats                   | Compute stats on cases                | N/A                                                                                                                  |
 | POST        | /api/case                          | Create a case                         | `#api.case.create(title:, description:, severity: nil, start_date: nil, owner: nil, flag: nil, tlp: nil, tags: nil)` |
 | GET         | /api/case/:caseId                  | Get a case                            | `#api.case.get_by_id(id)`                                                                                            |
-| PATCH       | /api/case/:caseId                  | Update a case                         | [x]                                                                                                                  |
+| PATCH       | /api/case/:caseId                  | Update a case                         | N/A                                                                                                                  |
 | DELETE      | /api/case/:caseId                  | Remove a case                         | `#api.case.delete_by_id(id)`                                                                                         |
-| GET         | /api/case/:caseId/links            | Get list of cases linked to this case | [x]                                                                                                                  |
-| POST        | /api/case/:caseId1/_merge/:caseId2 | Merge two cases                       | [x]                                                                                                                  |
+| GET         | /api/case/:caseId/links            | Get list of cases linked to this case | N/A                                                                                                                  |
+| POST        | /api/case/:caseId1/_merge/:caseId2 | Merge two cases                       | N/A                                                                                                                  |
 
 ## License
 
