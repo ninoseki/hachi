@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/case
+    body:
+      encoding: UTF-8
+      string: '{"title":"test case","description":"test case"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 14 Apr 2019 10:25:11 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '367'
+    body:
+      encoding: UTF-8
+      string: '{"owner":"test","severity":2,"_routing":"AWobYR1NH8Rbrc-EdGxJ","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1555237509511,"_parent":null,"createdBy":"test","caseId":7,"tlp":2,"metrics":{},"_id":"AWobYR1NH8Rbrc-EdGxJ","id":"AWobYR1NH8Rbrc-EdGxJ","_version":1,"pap":2,"startDate":1555237510476,"status":"Open"}'
+    http_version: 
+  recorded_at: Sun, 14 Apr 2019 10:25:11 GMT
+recorded_with: VCR 4.0.0

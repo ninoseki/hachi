@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<API_ENDPOINT>:9000/api/alert/e34a7adc35780454372f0567f951694e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - THE-HIVE-XSRF-TOKEN=9997b6c64f6ccc00a791347a3edc071c6935e749-1555237511575-aaba7eb8a4fa0cbab019337a;
+        Path=/
+      Date:
+      - Sun, 14 Apr 2019 10:25:11 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '504'
+    body:
+      encoding: UTF-8
+      string: '{"date":1555198071986,"severity":2,"_routing":"e34a7adc35780454372f0567f951694e","updatedBy":"test","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555198071986,"source":"instance1","type":"external","follow":true,"title":"Test
+        Alert","createdAt":1555198071980,"_parent":null,"createdBy":"test","tlp":2,"_id":"e34a7adc35780454372f0567f951694e","id":"e34a7adc35780454372f0567f951694e","sourceRef":"alert-ref","_version":2,"artifacts":[],"status":"Ignored","updatedAt":1555217245220}'
+    http_version: 
+  recorded_at: Sun, 14 Apr 2019 10:25:11 GMT
+recorded_with: VCR 4.0.0

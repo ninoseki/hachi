@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<API_ENDPOINT>:9000/api/case
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Total:
+      - '7'
+      Set-Cookie:
+      - THE-HIVE-XSRF-TOKEN=164a5caf93f2f7b2085c5feea29fdb799ecc21d9-1555237511511-d066e6316d45fe2b720e18f9;
+        Path=/
+      Date:
+      - Sun, 14 Apr 2019 10:25:11 GMT
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '[{"owner":"test","severity":2,"_routing":"AWobYRFsH8Rbrc-EdGxG","flag":false,"updatedBy":"test","customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1555237507327,"_parent":null,"createdBy":"test","caseId":6,"tlp":2,"metrics":{},"_id":"AWobYRFsH8Rbrc-EdGxG","id":"AWobYRFsH8Rbrc-EdGxG","_version":2,"startDate":1555237507435,"pap":2,"status":"Deleted","updatedAt":1555237508475},{"owner":"test","severity":2,"_routing":"AWobYR1NH8Rbrc-EdGxJ","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1555237509511,"_parent":null,"createdBy":"test","caseId":7,"tlp":2,"metrics":{},"_id":"AWobYR1NH8Rbrc-EdGxJ","id":"AWobYR1NH8Rbrc-EdGxJ","_version":1,"pap":2,"startDate":1555237510476,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWobYKN1H8Rbrc-EdGxD","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1555237479124,"_parent":null,"createdBy":"test","caseId":5,"tlp":2,"metrics":{},"_id":"AWobYKN1H8Rbrc-EdGxD","id":"AWobYKN1H8Rbrc-EdGxD","_version":1,"pap":2,"startDate":1555237479283,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWobUeEPH8Rbrc-EdGw8","flag":false,"updatedBy":"test","customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1555236511042,"_parent":null,"createdBy":"test","caseId":4,"tlp":2,"metrics":{},"_id":"AWobUeEPH8Rbrc-EdGw8","id":"AWobUeEPH8Rbrc-EdGw8","_version":2,"pap":2,"startDate":1555236512014,"status":"Deleted","updatedAt":1555236513077},{"owner":"test","severity":2,"_routing":"AWobUdkoH8Rbrc-EdGw6","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1555236508997,"_parent":null,"createdBy":"test","caseId":3,"tlp":2,"metrics":{},"_id":"AWobUdkoH8Rbrc-EdGw6","id":"AWobUdkoH8Rbrc-EdGw6","_version":1,"pap":2,"startDate":1555236509990,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWobTO2jH8Rbrc-EdGw2","flag":false,"customFields":{},"_type":"case","description":"test2","title":"test2","tags":["test"],"createdAt":1555236187047,"_parent":null,"createdBy":"test","caseId":2,"tlp":2,"metrics":{},"_id":"AWobTO2jH8Rbrc-EdGw2","id":"AWobTO2jH8Rbrc-EdGw2","_version":1,"pap":2,"startDate":1555236180000,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWoZBct1H8Rbrc-EdGwH","flag":false,"customFields":{},"_type":"case","description":"test","title":"test","tags":["test"],"createdAt":1555197970270,"_parent":null,"createdBy":"test","caseId":1,"tlp":2,"metrics":{},"_id":"AWoZBct1H8Rbrc-EdGwH","id":"AWoZBct1H8Rbrc-EdGwH","_version":1,"pap":2,"startDate":1555197960000,"status":"Open"}]'
+    http_version: 
+  recorded_at: Sun, 14 Apr 2019 10:25:11 GMT
+recorded_with: VCR 4.0.0

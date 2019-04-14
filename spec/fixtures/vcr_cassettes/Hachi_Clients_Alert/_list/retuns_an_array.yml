@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<API_ENDPOINT>:9000/api/alert
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Total:
+      - '12'
+      Set-Cookie:
+      - THE-HIVE-XSRF-TOKEN=75b4d8b01de8760040127918deb8eb0ad902a100-1555237513557-f483bfd5c2010fa3e27d5b8e;
+        Path=/
+      Date:
+      - Sun, 14 Apr 2019 10:25:13 GMT
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '[{"date":1555219708464,"severity":2,"_routing":"fe9dad84558cebbd758436c7c207d8c5","updatedBy":"test","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555219708464,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1555219708463,"_parent":null,"createdBy":"test","tlp":2,"_id":"fe9dad84558cebbd758436c7c207d8c5","id":"fe9dad84558cebbd758436c7c207d8c5","sourceRef":"a203558c6bee689e3c8b","_version":2,"artifacts":[],"status":"Ignored","updatedAt":1555219733744},{"date":1555220092990,"severity":2,"_routing":"f279374224985098c97cc408bc1f810f","updatedBy":"test","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555220092990,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1555220092984,"_parent":null,"createdBy":"test","tlp":2,"_id":"f279374224985098c97cc408bc1f810f","id":"f279374224985098c97cc408bc1f810f","sourceRef":"11666000da8f85bb446f","_version":2,"artifacts":[],"status":"Ignored","updatedAt":1555220093333},{"date":1555198071986,"severity":2,"_routing":"e34a7adc35780454372f0567f951694e","updatedBy":"test","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555198071986,"source":"instance1","type":"external","follow":true,"title":"Test
+        Alert","createdAt":1555198071980,"_parent":null,"createdBy":"test","tlp":2,"_id":"e34a7adc35780454372f0567f951694e","id":"e34a7adc35780454372f0567f951694e","sourceRef":"alert-ref","_version":2,"artifacts":[],"status":"Ignored","updatedAt":1555217245220},{"date":1555198206241,"severity":2,"_routing":"976f8f50accfeba223e49c42b16e99e6","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555198206241,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1555198206239,"_parent":null,"createdBy":"test","tlp":2,"_id":"976f8f50accfeba223e49c42b16e99e6","id":"976f8f50accfeba223e49c42b16e99e6","sourceRef":"test","_version":1,"artifacts":[],"status":"New"},{"date":1555216678886,"severity":2,"_routing":"92fd85963a7b55e094ef69e3350350b1","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555216678886,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1555216678885,"_parent":null,"createdBy":"test","tlp":2,"_id":"92fd85963a7b55e094ef69e3350350b1","id":"92fd85963a7b55e094ef69e3350350b1","sourceRef":"6b54cd588dc580842478","_version":1,"artifacts":[],"status":"New"},{"date":1555217770566,"severity":2,"_routing":"92b360eea2324031158ec84f07fcd4bf","updatedBy":"test","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555217770566,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1555217770565,"_parent":null,"createdBy":"test","tlp":2,"_id":"92b360eea2324031158ec84f07fcd4bf","id":"92b360eea2324031158ec84f07fcd4bf","sourceRef":"2f609ac7d4689ac8b5a2","_version":2,"artifacts":[],"status":"Ignored","updatedAt":1555217771422},{"date":1555219995268,"severity":2,"_routing":"8a67f2794a3b4776187dc9dc14c07564","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555219995268,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1555219995262,"_parent":null,"createdBy":"test","tlp":2,"_id":"8a67f2794a3b4776187dc9dc14c07564","id":"8a67f2794a3b4776187dc9dc14c07564","sourceRef":"cdef302e72e6195304d2","_version":1,"artifacts":[],"status":"New"},{"date":1555198525470,"severity":2,"_routing":"7385034f436712b7fc17221b22b4203f","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555198525469,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1555198525467,"_parent":null,"createdBy":"test","tlp":2,"_id":"7385034f436712b7fc17221b22b4203f","id":"7385034f436712b7fc17221b22b4203f","sourceRef":"test1","_version":1,"artifacts":[],"status":"New"},{"date":1555217738704,"severity":2,"_routing":"6040e882a147293262eaccf1eb1fa918","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555217738703,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1555217738703,"_parent":null,"createdBy":"test","tlp":2,"_id":"6040e882a147293262eaccf1eb1fa918","id":"6040e882a147293262eaccf1eb1fa918","sourceRef":"4ba6d48213fde286a64e","_version":1,"artifacts":[],"status":"New"},{"date":1555198671178,"severity":2,"_routing":"17392a7c97b8f01e12461760aacbacaa","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555198671178,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1555198671176,"_parent":null,"createdBy":"test","tlp":2,"_id":"17392a7c97b8f01e12461760aacbacaa","id":"17392a7c97b8f01e12461760aacbacaa","sourceRef":"test_alert","_version":1,"artifacts":[],"status":"New"}]'
+    http_version: 
+  recorded_at: Sun, 14 Apr 2019 10:25:13 GMT
+recorded_with: VCR 4.0.0

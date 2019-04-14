@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/case/AWoZBct1H8Rbrc-EdGwH/artifact
+    body:
+      encoding: UTF-8
+      string: '{"data":"9.9.9.9","dataType":"ip","message":"test"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 14 Apr 2019 10:27:18 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '425'
+    body:
+      encoding: UTF-8
+      string: '{"_routing":"AWoZBct1H8Rbrc-EdGwH","reports":{},"updatedBy":"test","data":"9.9.9.9","dataType":"ip","_type":"case_artifact","sighted":false,"message":"test","tags":[],"createdAt":1555219992793,"_parent":"AWoZBct1H8Rbrc-EdGwH","createdBy":"test","tlp":2,"_id":"b28db3bb86f712b68da4351b903488d0","id":"b28db3bb86f712b68da4351b903488d0","ioc":false,"_version":3,"startDate":1555219992820,"status":"Ok","updatedAt":1555237638765}'
+    http_version: 
+  recorded_at: Sun, 14 Apr 2019 10:27:18 GMT
+recorded_with: VCR 4.0.0

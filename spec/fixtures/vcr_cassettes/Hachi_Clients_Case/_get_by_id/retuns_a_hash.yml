@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<API_ENDPOINT>:9000/api/case/AWobTO2jH8Rbrc-EdGw2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - THE-HIVE-XSRF-TOKEN=d8d1629ad6087f676625051561f07aac829e14f6-1555237509493-6e31e1c6e6ee4aa1f9e38b0d;
+        Path=/
+      Date:
+      - Sun, 14 Apr 2019 10:25:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '375'
+    body:
+      encoding: UTF-8
+      string: '{"owner":"test","severity":2,"_routing":"AWobTO2jH8Rbrc-EdGw2","flag":false,"customFields":{},"_type":"case","description":"test2","title":"test2","tags":["test"],"createdAt":1555236187047,"_parent":null,"createdBy":"test","caseId":2,"tlp":2,"metrics":{},"_id":"AWobTO2jH8Rbrc-EdGw2","id":"AWobTO2jH8Rbrc-EdGw2","_version":1,"pap":2,"startDate":1555236180000,"status":"Open"}'
+    http_version: 
+  recorded_at: Sun, 14 Apr 2019 10:25:09 GMT
+recorded_with: VCR 4.0.0
