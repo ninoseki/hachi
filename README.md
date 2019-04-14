@@ -28,6 +28,8 @@ api.alert.list
 api.artifact.search(data: "1.1.1.1", data_type: "ip")
 ```
 
+See `samples` for more.
+
 ## Implemented methods
 
 ### Alert
