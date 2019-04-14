@@ -22,6 +22,17 @@ RSpec.describe Hachi::Clients::Alert, :vcr do
       res = api.alert.create( title: "Test Alert", description: "test", type: "test", source: "test")
       expect(res).to be_an(Hash)
     end
+
+    context "create an alert with artifacts" do
+      it "returns a hash" do
+        artifacts = [
+          { data: "1.1.1.1", data_type: "ip", message: "test" },
+          { data: "github.com", data_type: "domain", tags: ["test"] }
+        ]
+        res = api.alert.create( title: "Test Alert", description: "test", type: "test", source: "test", artifacts: artifacts)
+        expect(res).to be_an(Hash)
+      end
+    end
   end
 
   describe "#delete_by_id" do

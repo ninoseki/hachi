@@ -35,6 +35,10 @@ module Hachi
           tags: tags
         }.compact
       end
+
+      def validate_for_creation
+        raise(ArgumentError, "message or tags is requried for artifact creation") unless message || tags
+      end
     end
   end
 end

@@ -30,13 +30,14 @@ module Hachi
         @type = type
         @source = source
         @source_ref = source_ref || SecureRandom.hex(10)
-        @artifacts = artifacts
+        @artifacts = artifacts.nil? ? nil : artifacts.map { |a| Artifact.new a }
         @follow = follow
 
         validate_date if date
         validate_severity if severity
         validate_status if status
         validate_tlp if tlp
+        validate_artifacts if artifacts
       end
 
       def payload
@@ -51,7 +52,7 @@ module Hachi
           type: type,
           source: source,
           sourceRef: source_ref,
-          artifacts: artifacts,
+          artifacts: artifacts&.map(&:payload),
           follow: follow
         }.compact
       end
@@ -63,6 +64,10 @@ module Hachi
         true
       rescue ArgumentError => _
         raise ArgumentError, "date should be Date format"
+      end
+
+      def validate_artifacts
+        artifacts.each(&:validate_for_creation)
       end
     end
   end
