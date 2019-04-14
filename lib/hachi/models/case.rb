@@ -2,7 +2,7 @@
 
 module Hachi
   module Models
-    class Case
+    class Case < Base
       attr_reader :title
       attr_reader :description
       attr_reader :severity
@@ -25,6 +25,7 @@ module Hachi
         validate_flag if flag
         validate_severity if severity
         validate_start_date if start_date
+        validate_tags if tags
         validate_tlp if tlp
       end
 
@@ -43,29 +44,17 @@ module Hachi
 
       private
 
-      def validate_severity
-        return true if severity >= 1 && severity <= 3
-
-        raise ArgumentError, "severity should be 1 - 3 (1: low; 2: medium; 3: high)."
-      end
-
       def validate_start_date
         DateTime.parse(start_date)
         true
       rescue ArgumentError => _
-        raise ArgumentError, "date should be Date format."
-      end
-
-      def validate_tlp
-        return true if tlp >= 0 && severity <= 3
-
-        raise ArgumentError, "tlp should be 0 - 3 (0: white; 1: green; 2: amber; 3: red)."
+        raise ArgumentError, "date should be Date format"
       end
 
       def validate_flag
         return true if [true, false].include?(flag)
 
-        raise ArgumentError, "flag should be true or false."
+        raise ArgumentError, "flag should be true or false"
       end
     end
   end

@@ -2,7 +2,7 @@
 
 module Hachi
   module Models
-    class Artifact
+    class Artifact < Base
       DATA_TYPES = %w(filename file fqdn hash uri_path ip domain mail autonomous-system registry mail_subject regexp user-agent other url).freeze
 
       attr_reader :data
@@ -21,7 +21,9 @@ module Hachi
         raise(ArgumentError, "data is required") unless data
         raise(ArgumentError, "data_type is required") unless data_type
         raise(ArgumentError, "invalid data type") unless DATA_TYPES.include?(data_type)
-        raise(ArgumentError, "tags should be an array") unless tags.nil? || tags.is_a?(Array)
+
+        validate_tags if tags
+        validate_tlp if tlp
       end
 
       def payload
