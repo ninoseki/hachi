@@ -30,7 +30,9 @@ module Hachi
         post("/api/case", kase.payload) { |json| json }
       end
 
-      def search(query)
+      def search(query, range: "all")
+        validate_range range
+
         payload = {
           query: {
             _and:
@@ -45,7 +47,8 @@ module Hachi
               ]
           }
         }
-        post("/api/case/_search?range=all", payload) { |json| json }
+
+        post("/api/case/_search?range=#{range}", payload) { |json| json }
       end
     end
   end

@@ -99,6 +99,16 @@ module Hachi
         delete.add_field "Authorization", "Bearer #{api_key}"
         request(delete, &block)
       end
+
+      def validate_range(range)
+        return true if range == "all"
+        raise ArgumentError, "range should be 'all' or `from-to`" unless range.match?(/(\d+)-(\d+)/)
+
+        from, to = range.split("-").map(&:to_i)
+        return true if from < to
+
+        raise ArgumentError, "from should be smaller than to"
+      end
     end
   end
 end
