@@ -23,7 +23,9 @@ module Hachi
         delete("/api/case/artifact/#{id}") { |json| json }
       end
 
-      def search(data:, data_type:)
+      def search(data:, data_type:, range: "all")
+        validate_range range
+
         artifact = Models::Artifact.new(data: data, data_type: data_type)
         payload = {
           query: {
@@ -41,7 +43,7 @@ module Hachi
           }
         }
 
-        post("/api/case/artifact/_search?range=all", payload) { |json| json }
+        post("/api/case/artifact/_search?range=#{range}", payload) { |json| json }
       end
     end
   end
