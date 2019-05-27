@@ -24,31 +24,14 @@ module Hachi
           owner: owner,
           flag: flag,
           tlp: tlp,
-          tags: tags
+          tags: tags,
         )
 
         post("/api/case", kase.payload) { |json| json }
       end
 
-      def search(query, range: "all")
-        validate_range range
-
-        payload = {
-          query: {
-            _and:
-              [
-                { string: query },
-                { _and:
-                  [
-                    { _not: { status: "Deleted" } },
-                    { _not:
-                      { _in: { _field: "_type", _values: ["dashboard", "data", "user", "analyzer", "caseTemplate", "reportTemplate", "action"] } } }
-                  ] }
-              ]
-          }
-        }
-
-        post("/api/case/_search?range=#{range}", payload) { |json| json }
+      def search(attributes, range: "all")
+        _search("/api/case/_search", attributes: attributes, range: range) { |json| json }
       end
     end
   end

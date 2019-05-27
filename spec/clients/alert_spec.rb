@@ -2,6 +2,16 @@
 
 RSpec.describe Hachi::Clients::Alert, :vcr do
   let(:api) { Hachi::API.new }
+  let(:title) { "Test Alert" }
+  let(:description) { "test" }
+  let(:type) { "test" }
+  let(:source) { "test" }
+  let(:artifacts) {
+    [
+      { data: "1.1.1.1", data_type: "ip", message: "test" },
+      { data: "github.com", data_type: "domain", tags: ["test"] },
+    ]
+  }
 
   describe "#list" do
     it "retuns an array" do
@@ -19,28 +29,33 @@ RSpec.describe Hachi::Clients::Alert, :vcr do
 
   describe "#create" do
     it "returns a hash" do
-      res = api.alert.create( title: "Test Alert", description: "test", type: "test", source: "test")
+      res = api.alert.create(title: title, description: description, type: type, source: source)
       expect(res).to be_an(Hash)
     end
 
     context "create an alert with artifacts" do
       it "returns a hash" do
-        artifacts = [
-          { data: "1.1.1.1", data_type: "ip", message: "test" },
-          { data: "github.com", data_type: "domain", tags: ["test"] }
-        ]
-        res = api.alert.create( title: "Test Alert", description: "test", type: "test", source: "test", artifacts: artifacts)
+        res = api.alert.create(title: title, description: description, type: type, source: source, artifacts: artifacts)
         expect(res).to be_an(Hash)
       end
     end
   end
 
   describe "#delete_by_id" do
-    let(:id) { api.alert.create( title: "Test Alert", description: "test", type: "test", source: "test")&.dig("_id") }
+    let(:id) { api.alert.create(title: title, description: description, type: type, source: source)&.dig("_id") }
 
     it "retuns an empty string" do
       res = api.alert.delete_by_id(id)
       expect(res.empty?).to be true
+    end
+  end
+
+  describe "#search" do
+    let(:attributes) { { title: title } }
+
+    it do
+      res = api.alert.search(attributes: attributes)
+      expect(res).to be_an(Array)
     end
   end
 end

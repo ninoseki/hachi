@@ -31,9 +31,13 @@ module Hachi
           source: source,
           source_ref: source_ref,
           artifacts: artifacts,
-          follow: follow
+          follow: follow,
         )
         post("/api/alert", alert.payload) { |json| json }
+      end
+
+      def search(attributes:, range: "all")
+        _search("/api/alert/_search", attributes: attributes, range: range) { |json| json }
       end
     end
   end

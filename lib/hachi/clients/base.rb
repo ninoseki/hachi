@@ -33,7 +33,7 @@ module Hachi
             proxy_address: uri.hostname,
             proxy_port: uri.port,
             proxy_from_env: false,
-            use_ssl: true
+            use_ssl: true,
           }
         else
           { use_ssl: true }
@@ -64,7 +64,7 @@ module Hachi
           response = http.request(req)
           json = parse_body(response.body)
 
-          raise(Error, "Unsupported response code returned: #{response.code} (#{json&.dig('message')})" ) unless response.code.start_with? "20"
+          raise(Error, "Unsupported response code returned: #{response.code} (#{json&.dig("message")})") unless response.code.start_with? "20"
 
           yield json
         end
@@ -108,6 +108,27 @@ module Hachi
         return true if from < to
 
         raise ArgumentError, "from should be smaller than to"
+      end
+
+      def _search(path, attributes:, range: "all")
+        validate_range range
+
+        conditions = attributes.map do |key, value|
+          { _string: "#{key}:#{value}" }
+        end
+
+        default_conditions = {
+          _and: [
+            { _not: { status: "Deleted" } },
+            { _not: { _in: { _field: "_type", _values: ["dashboard", "data", "user", "analyzer", "caseTemplate", "reportTemplate", "action"] } } },
+          ],
+        }
+
+        query = {
+          _and: [conditions, default_conditions].flatten,
+        }
+
+        post("#{path}?range=#{range}", query: query) { |json| json }
       end
     end
   end
