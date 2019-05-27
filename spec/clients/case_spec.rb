@@ -35,7 +35,7 @@ RSpec.describe Hachi::Clients::Case, :vcr do
 
   describe "#search" do
     it "returns an array" do
-      res = api.case.search("test")
+      res = api.case.search(title: "test")
       expect(res).to be_an(Array)
     end
   end
