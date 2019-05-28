@@ -26,6 +26,10 @@ module Hachi
       def search(attributes, range: "all")
         _search("/api/case/artifact/_search", attributes: attributes, range: range) { |json| json }
       end
+
+      def similar(id)
+        get("/api/case/artifact/#{id}/similar") { |json| json }
+      end
     end
   end
 end
