@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<API_ENDPOINT>:9000/api/case/AWobTO2jH8Rbrc-EdGw2/links
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - THE-HIVE-XSRF-TOKEN=49bc94236bce017a8e96505a49e2b01c20c44af7-1558948453044-3ec25aa4d98c72dac5396e93;
+        Path=/
+      Date:
+      - Mon, 27 May 2019 09:14:13 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '812'
+    body:
+      encoding: UTF-8
+      string: '[{"owner":"test","severity":2,"_routing":"AWoZBct1H8Rbrc-EdGwH","flag":false,"updatedBy":"test","customFields":{},"_type":"case","title":"test","tags":["test"],"createdAt":1555197970270,"_parent":null,"linkedWith":[{"_routing":"AWoZBct1H8Rbrc-EdGwH","reports":{},"data":"1.1.1.1","dataType":"ip","_type":"case_artifact","sighted":false,"message":"","tags":["test"],"createdAt":1555197983904,"_parent":"AWoZBct1H8Rbrc-EdGwH","createdBy":"test","tlp":2,"_id":"3838d1265112313b4bb3f55acae37ad5","id":"3838d1265112313b4bb3f55acae37ad5","ioc":false,"_version":1,"startDate":1555197983922,"status":"Ok"}],"createdBy":"test","caseId":1,"tlp":2,"metrics":{},"_id":"AWoZBct1H8Rbrc-EdGwH","id":"AWoZBct1H8Rbrc-EdGwH","linksCount":1,"_version":2,"pap":2,"startDate":1555197960000,"status":"Open","updatedAt":1555280812091}]'
+    http_version: 
+  recorded_at: Tue, 28 May 2019 11:10:32 GMT
+recorded_with: VCR 5.0.0
