@@ -62,7 +62,7 @@ See `samples` for more.
 | GET         | /api/case/artifact/:artifactId         | Get an observable               | `#api.artifact.get_by_id(id)`                                                         |
 | DELETE      | /api/case/artifact/:artifactId         | Remove an observable            | `#api.artifact.delete_by_id(id)`                                                      |
 | PATCH       | /api/case/artifact/:artifactId         | Update an observable            | N/A                                                                                   |
-| GET         | /api/case/artifact/:artifactId/similar | Get list of similar observables | N/A                                                                                   |
+| GET         | /api/case/artifact/:artifactId/similar | Get list of similar observables | `#api.artifact.similar(id)`                                                           |
 | PATCH       | /api/case/artifact/_bulk               | Update observables in bulk      | N/A                                                                                   |
 
 ### Case
