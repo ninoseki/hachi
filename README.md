@@ -77,7 +77,7 @@ See `samples` for more.
 | GET         | /api/case/:caseId                  | Get a case                            | `#api.case.get_by_id(id)`                                                                                            |
 | PATCH       | /api/case/:caseId                  | Update a case                         | N/A                                                                                                                  |
 | DELETE      | /api/case/:caseId                  | Remove a case                         | `#api.case.delete_by_id(id)`                                                                                         |
-| GET         | /api/case/:caseId/links            | Get list of cases linked to this case | N/A                                                                                                                  |
+| GET         | /api/case/:caseId/links            | Get list of cases linked to this case | `#api.case.links(id)`                                                                                                |
 | POST        | /api/case/:caseId1/_merge/:caseId2 | Merge two cases                       | N/A                                                                                                                  |
 
 ## License

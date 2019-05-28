@@ -33,6 +33,10 @@ module Hachi
       def search(attributes, range: "all")
         _search("/api/case/_search", attributes: attributes, range: range) { |json| json }
       end
+
+      def links(id)
+        get("/api/case/#{id}/links") { |json| json }
+      end
     end
   end
 end
