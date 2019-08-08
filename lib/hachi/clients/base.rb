@@ -64,7 +64,11 @@ module Hachi
           response = http.request(req)
           json = parse_body(response.body)
 
-          raise(Error, "Unsupported response code returned: #{response.code} (#{json&.dig('message')})") unless response.code.start_with? "20"
+          code = response.code
+          unless code.start_with? "20"
+            message = json.dig("message")
+            raise Error, "Unsupported response code returned: #{code} (#{message})"
+          end
 
           yield json
         end
@@ -114,8 +118,8 @@ module Hachi
         validate_range range
 
         conditions = attributes.map do |key, value|
-          if value.is_a?(Array)
-            { _string: value.join(", ") }
+          if key == :data && value.is_a?(Array)
+            { _or: decompose_data(value) }
           else
             { _string: "#{key}:#{value}" }
           end
@@ -133,6 +137,12 @@ module Hachi
         }
 
         post("#{path}?range=#{range}", query: query) { |json| json }
+      end
+
+      def decompose_data(data)
+        data.map do |elem|
+          { _field: "data", _value: elem }
+        end
       end
     end
   end

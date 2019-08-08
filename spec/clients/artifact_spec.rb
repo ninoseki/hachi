@@ -34,10 +34,13 @@ RSpec.describe Hachi::Clients::Artifact, :vcr do
       expect(res).to be_an(Array)
     end
 
-    context "when given comma-separated values" do
-      it "return an array" do
-        res = api.artifact.search(data: %w(1.1.1.1 8.8.8.8))
-        expect(res).to be_an(Array)
+    context "when given an array" do
+      let(:data) { %w(1.1.1.1 8.8.8.8 github.com http://example.com example@gmail.com 44d88612fea8a8f36de82e1278abb02f) }
+
+      it do
+        results = api.artifact.search(data: data)
+        keys = results.map { |result| result.dig("data") }
+        expect(keys.all? { |key| data.include? key }).to be(true)
       end
     end
   end
