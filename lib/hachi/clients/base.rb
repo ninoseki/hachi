@@ -55,7 +55,7 @@ module Hachi
 
       def parse_body(body)
         JSON.parse body.to_s
-      rescue JSON::ParserError => _
+      rescue JSON::ParserError => _e
         body.to_s
       end
 
@@ -64,7 +64,7 @@ module Hachi
           response = http.request(req)
           json = parse_body(response.body)
 
-          raise(Error, "Unsupported response code returned: #{response.code} (#{json&.dig("message")})") unless response.code.start_with? "20"
+          raise(Error, "Unsupported response code returned: #{response.code} (#{json&.dig('message')})") unless response.code.start_with? "20"
 
           yield json
         end
@@ -114,7 +114,11 @@ module Hachi
         validate_range range
 
         conditions = attributes.map do |key, value|
-          { _string: "#{key}:#{value}" }
+          if value.match?(/(.+, )+(.+)/)
+            { _string: value }
+          else
+            { _string: "#{key}:#{value}" }
+          end
         end
 
         default_conditions = {

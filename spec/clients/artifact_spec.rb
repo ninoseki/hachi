@@ -33,6 +33,13 @@ RSpec.describe Hachi::Clients::Artifact, :vcr do
       res = api.artifact.search(data: "1.1.1.1", data_type: "ip")
       expect(res).to be_an(Array)
     end
+
+    context "when given comma-separated values" do
+      it "return an array" do
+        res = api.artifact.search(data: "1.1.1.1, 8.8.8.8")
+        expect(res).to be_an(Array)
+      end
+    end
   end
 
   describe "#similar" do
