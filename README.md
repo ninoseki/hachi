@@ -28,6 +28,8 @@ api.alert.list
 
 # search atrifacts
 api.artifact.search(data: "1.1.1.1", data_type: "ip")
+# you can do a bulk search by giving an array as an input
+api.artifact.search(data: %w(1.1.1.1 8.8.8.8 github.com))
 ```
 
 See `samples` for more.
