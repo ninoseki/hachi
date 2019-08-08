@@ -114,8 +114,8 @@ module Hachi
         validate_range range
 
         conditions = attributes.map do |key, value|
-          if value.match?(/(.+, )+(.+)/)
-            { _string: value }
+          if value.is_a?(Array)
+            { _string: value.join(", ") }
           else
             { _string: "#{key}:#{value}" }
           end

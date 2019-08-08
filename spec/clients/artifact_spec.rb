@@ -36,7 +36,7 @@ RSpec.describe Hachi::Clients::Artifact, :vcr do
 
     context "when given comma-separated values" do
       it "return an array" do
-        res = api.artifact.search(data: "1.1.1.1, 8.8.8.8")
+        res = api.artifact.search(data: %w(1.1.1.1 8.8.8.8))
         expect(res).to be_an(Array)
       end
     end
