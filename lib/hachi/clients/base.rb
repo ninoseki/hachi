@@ -66,8 +66,7 @@ module Hachi
 
           code = response.code
           unless code.start_with? "20"
-            message = json.dig("message")
-            raise Error, "Unsupported response code returned: #{code} (#{message})"
+            raise Error, "Unsupported response code returned: #{code} (#{json})"
           end
 
           yield json

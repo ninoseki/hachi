@@ -39,6 +39,12 @@ RSpec.describe Hachi::Clients::Alert, :vcr do
         expect(res).to be_an(Hash)
       end
     end
+
+    context "when raise an error" do
+      it do
+        expect { api.alert.create(title: title, description: description, type: type, source: source, tags: [["N/A"]]) }.to raise_error(Hachi::Error)
+      end
+    end
   end
 
   describe "#delete_by_id" do
