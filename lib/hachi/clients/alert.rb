@@ -36,8 +36,8 @@ module Hachi
         post("/api/alert", alert.payload) { |json| json }
       end
 
-      def search(attributes, range: "all")
-        _search("/api/alert/_search", attributes: attributes, range: range) { |json| json }
+      def search(attributes, range: "all", sort: nil)
+        _search("/api/alert/_search", attributes: attributes, range: range, sort: sort) { |json| json }
       end
     end
   end
