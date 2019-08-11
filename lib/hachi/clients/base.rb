@@ -2,6 +2,7 @@
 
 require "json"
 require "net/https"
+require "uri"
 
 module Hachi
   module Clients
@@ -113,7 +114,7 @@ module Hachi
         raise ArgumentError, "from should be smaller than to"
       end
 
-      def _search(path, attributes:, range: "all")
+      def _search(path, attributes:, range: "all", sort: nil)
         validate_range range
 
         attributes = normalize_attributes(attributes)
@@ -136,7 +137,9 @@ module Hachi
           _and: [conditions, default_conditions].flatten,
         }
 
-        post("#{path}?range=#{range}", query: query) { |json| json }
+        query_string = build_query_string(range: range, sort: sort)
+
+        post("#{path}?#{query_string}", query: query) { |json| json }
       end
 
       def decompose_data(data)
@@ -156,6 +159,10 @@ module Hachi
       def camelize(string)
         head, *others = string.to_s.split("_")
         [head, others.map(&:capitalize)].flatten.join
+      end
+
+      def build_query_string(params)
+        URI.encode_www_form(params.reject { |_k, v| v.nil? })
       end
     end
   end

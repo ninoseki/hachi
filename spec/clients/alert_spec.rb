@@ -63,5 +63,16 @@ RSpec.describe Hachi::Clients::Alert, :vcr do
       res = api.alert.search(attributes)
       expect(res).to be_an(Array)
     end
+
+    context "when given sort option" do
+      it do
+        alerts = api.alert.search(attributes, sort: "-date")
+        head = alerts.shift
+        alerts.each do |alert|
+          expect(head.dig("date").to_i).to be >= alert.dig("date").to_i
+          head = alert
+        end
+      end
+    end
   end
 end
