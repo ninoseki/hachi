@@ -23,7 +23,6 @@ module Hachi
         raise ArgumentError, "status should be New, Updated, Ignored or Imported"
       end
 
-
       def validate_tags
         raise ArgumentError, "tags should be an array" unless tags.is_a?(Array)
       end
