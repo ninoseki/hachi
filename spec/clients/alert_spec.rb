@@ -60,7 +60,7 @@ RSpec.describe Hachi::Clients::Alert, :vcr do
     let(:attributes) { { title: title } }
 
     it do
-      res = api.alert.search(attributes: attributes)
+      res = api.alert.search(attributes)
       expect(res).to be_an(Array)
     end
   end
