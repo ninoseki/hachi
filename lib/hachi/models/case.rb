@@ -47,7 +47,7 @@ module Hachi
       def validate_start_date
         DateTime.parse(start_date)
         true
-      rescue ArgumentError => _
+      rescue ArgumentError => _e
         raise ArgumentError, "date should be Date format"
       end
 
