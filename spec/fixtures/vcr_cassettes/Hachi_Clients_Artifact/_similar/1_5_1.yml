@@ -25,10 +25,10 @@ http_interactions:
       X-Total:
       - '0'
       Set-Cookie:
-      - THE-HIVE-XSRF-TOKEN=671491b9c96e8c9aba78b4afd3fbaf901c80dda0-1558949100046-f2ad02986bad7526f37737a9;
+      - THE-HIVE-XSRF-TOKEN=a1ea2e9f550566f1a3cc3bea3ee5a20581df1083-1565530129710-db5e02882ee8282e8bfd700e;
         Path=/
       Date:
-      - Mon, 27 May 2019 09:25:00 GMT
+      - Sun, 11 Aug 2019 13:28:49 GMT
       Transfer-Encoding:
       - chunked
       Content-Type:
@@ -37,5 +37,5 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Tue, 28 May 2019 11:21:19 GMT
+  recorded_at: Sun, 11 Aug 2019 13:28:49 GMT
 recorded_with: VCR 5.0.0

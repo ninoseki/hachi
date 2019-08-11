@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/alert
     body:
       encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"a62795bca2bfb04d9ae4"}'
+      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"3bae431d925c249f4617"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -25,15 +25,15 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Sun, 14 Apr 2019 10:25:14 GMT
+      - Sun, 11 Aug 2019 13:28:55 GMT
       Content-Type:
       - application/json
       Content-Length:
       - '457'
     body:
       encoding: UTF-8
-      string: '{"date":1555237513586,"severity":2,"_routing":"90e45a08d95a57057379f48e4c3787ec","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555237513586,"source":"test","type":"test","follow":true,"title":"Test
-        Alert","createdAt":1555237513585,"_parent":null,"createdBy":"test","tlp":2,"_id":"90e45a08d95a57057379f48e4c3787ec","id":"90e45a08d95a57057379f48e4c3787ec","sourceRef":"a62795bca2bfb04d9ae4","_version":1,"artifacts":[],"status":"New"}'
+      string: '{"date":1565530134449,"severity":2,"_routing":"ec1faf8c0b7579e1b84ebd08b0e56d65","customFields":{},"_type":"alert","description":"test","lastSyncDate":1565530134449,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1565530134447,"_parent":null,"createdBy":"test","tlp":2,"_id":"ec1faf8c0b7579e1b84ebd08b0e56d65","id":"ec1faf8c0b7579e1b84ebd08b0e56d65","sourceRef":"3bae431d925c249f4617","_version":1,"artifacts":[],"status":"New"}'
     http_version: 
-  recorded_at: Sun, 14 Apr 2019 10:25:14 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Sun, 11 Aug 2019 13:28:55 GMT
+recorded_with: VCR 5.0.0

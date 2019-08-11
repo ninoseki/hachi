@@ -23,10 +23,10 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - THE-HIVE-XSRF-TOKEN=9997b6c64f6ccc00a791347a3edc071c6935e749-1555237511575-aaba7eb8a4fa0cbab019337a;
+      - THE-HIVE-XSRF-TOKEN=00339f2a497b381fd30f2573bb9a0a7a5921cb44-1565530136724-9451f8a759fc81acb86803bc;
         Path=/
       Date:
-      - Sun, 14 Apr 2019 10:25:11 GMT
+      - Sun, 11 Aug 2019 13:28:56 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -36,5 +36,5 @@ http_interactions:
       string: '{"date":1555198071986,"severity":2,"_routing":"e34a7adc35780454372f0567f951694e","updatedBy":"test","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555198071986,"source":"instance1","type":"external","follow":true,"title":"Test
         Alert","createdAt":1555198071980,"_parent":null,"createdBy":"test","tlp":2,"_id":"e34a7adc35780454372f0567f951694e","id":"e34a7adc35780454372f0567f951694e","sourceRef":"alert-ref","_version":2,"artifacts":[],"status":"Ignored","updatedAt":1555217245220}'
     http_version: 
-  recorded_at: Sun, 14 Apr 2019 10:25:11 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Sun, 11 Aug 2019 13:28:56 GMT
+recorded_with: VCR 5.0.0

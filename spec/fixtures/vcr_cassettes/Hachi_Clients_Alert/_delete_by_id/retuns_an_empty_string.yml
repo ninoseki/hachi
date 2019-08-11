@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/alert
     body:
       encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"13293ce76b7fd27179f2"}'
+      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"94bbbe3fb74cb1e1a233"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -25,20 +25,20 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Sun, 14 Apr 2019 10:25:12 GMT
+      - Sun, 11 Aug 2019 13:28:53 GMT
       Content-Type:
       - application/json
       Content-Length:
       - '457'
     body:
       encoding: UTF-8
-      string: '{"date":1555237511595,"severity":2,"_routing":"13e6ef108dec6419c63176b2be4ca7af","customFields":{},"_type":"alert","description":"test","lastSyncDate":1555237511595,"source":"test","type":"test","follow":true,"title":"Test
-        Alert","createdAt":1555237511594,"_parent":null,"createdBy":"test","tlp":2,"_id":"13e6ef108dec6419c63176b2be4ca7af","id":"13e6ef108dec6419c63176b2be4ca7af","sourceRef":"13293ce76b7fd27179f2","_version":1,"artifacts":[],"status":"New"}'
+      string: '{"date":1565530132427,"severity":2,"_routing":"406d2efcfa30101256512adc06bc41de","customFields":{},"_type":"alert","description":"test","lastSyncDate":1565530132426,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1565530132422,"_parent":null,"createdBy":"test","tlp":2,"_id":"406d2efcfa30101256512adc06bc41de","id":"406d2efcfa30101256512adc06bc41de","sourceRef":"94bbbe3fb74cb1e1a233","_version":1,"artifacts":[],"status":"New"}'
     http_version: 
-  recorded_at: Sun, 14 Apr 2019 10:25:12 GMT
+  recorded_at: Sun, 11 Aug 2019 13:28:53 GMT
 - request:
     method: delete
-    uri: http://<API_ENDPOINT>:9000/api/alert/13e6ef108dec6419c63176b2be4ca7af
+    uri: http://<API_ENDPOINT>:9000/api/alert/406d2efcfa30101256512adc06bc41de
     body:
       encoding: US-ASCII
       string: ''
@@ -59,10 +59,10 @@ http_interactions:
       message: No Content
     headers:
       Date:
-      - Sun, 14 Apr 2019 10:25:13 GMT
+      - Sun, 11 Aug 2019 13:28:54 GMT
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sun, 14 Apr 2019 10:25:13 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Sun, 11 Aug 2019 13:28:54 GMT
+recorded_with: VCR 5.0.0
