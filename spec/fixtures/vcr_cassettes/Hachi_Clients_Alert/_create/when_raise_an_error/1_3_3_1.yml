@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/alert
     body:
       encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","tags":[["N/A"]],"type":"test","source":"test","sourceRef":"3b0d6ef826030eb4aeea"}'
+      string: '{"title":"Test Alert","description":"test","tags":[["N/A"]],"type":"test","source":"test","sourceRef":"6a148cf6639d6d1b4d17"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -25,7 +25,7 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Fri, 09 Aug 2019 00:35:40 GMT
+      - Sun, 11 Aug 2019 13:28:56 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,5 +35,5 @@ http_interactions:
       string: '{"tableName":"alert","type":"AttributeCheckingError","errors":[{"name":"alert.tags","format":"string","type":"InvalidFormatAttributeError","message":"Invalid
         format for alert.tags: JsonInputValue([\"N/A\"]), expected string","value":{"type":"JsonInputValue","value":["N/A"]}}]}'
     http_version: 
-  recorded_at: Fri, 09 Aug 2019 00:35:41 GMT
+  recorded_at: Sun, 11 Aug 2019 13:28:56 GMT
 recorded_with: VCR 5.0.0

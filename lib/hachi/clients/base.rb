@@ -116,6 +116,7 @@ module Hachi
       def _search(path, attributes:, range: "all")
         validate_range range
 
+        attributes = normalize_attributes(attributes)
         conditions = attributes.map do |key, value|
           if key == :data && value.is_a?(Array)
             { _or: decompose_data(value) }
@@ -142,6 +143,19 @@ module Hachi
         data.map do |elem|
           { _field: "data", _value: elem }
         end
+      end
+
+      def normalize_attributes(attributes)
+        h = {}
+        attributes.each do |key, value|
+          h[camelize(key).to_sym] = value
+        end
+        h
+      end
+
+      def camelize(string)
+        head, *others = string.to_s.split("_")
+        [head, others.map(&:capitalize)].flatten.join
       end
     end
   end

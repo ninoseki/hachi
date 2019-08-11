@@ -25,20 +25,20 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Sun, 14 Apr 2019 10:25:08 GMT
+      - Sun, 11 Aug 2019 13:28:59 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '367'
+      - '368'
     body:
       encoding: UTF-8
-      string: '{"owner":"test","severity":2,"_routing":"AWobYRFsH8Rbrc-EdGxG","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1555237507327,"_parent":null,"createdBy":"test","caseId":6,"tlp":2,"metrics":{},"_id":"AWobYRFsH8Rbrc-EdGxG","id":"AWobYRFsH8Rbrc-EdGxG","_version":1,"startDate":1555237507435,"pap":2,"status":"Open"}'
+      string: '{"owner":"test","severity":2,"_routing":"AWyA3ivpHwcsT20qNY1A","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1565530138728,"_parent":null,"createdBy":"test","caseId":11,"tlp":2,"metrics":{},"_id":"AWyA3ivpHwcsT20qNY1A","id":"AWyA3ivpHwcsT20qNY1A","_version":1,"pap":2,"startDate":1565530139624,"status":"Open"}'
     http_version: 
-  recorded_at: Sun, 14 Apr 2019 10:25:08 GMT
+  recorded_at: Sun, 11 Aug 2019 13:28:59 GMT
 - request:
     method: delete
-    uri: http://<API_ENDPOINT>:9000/api/case/AWobYRFsH8Rbrc-EdGxG
+    uri: http://<API_ENDPOINT>:9000/api/case/AWyA3ivpHwcsT20qNY1A
     body:
       encoding: US-ASCII
       string: ''
@@ -59,10 +59,10 @@ http_interactions:
       message: No Content
     headers:
       Date:
-      - Sun, 14 Apr 2019 10:25:09 GMT
+      - Sun, 11 Aug 2019 13:29:00 GMT
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sun, 14 Apr 2019 10:25:09 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Sun, 11 Aug 2019 13:29:00 GMT
+recorded_with: VCR 5.0.0
