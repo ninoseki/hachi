@@ -1,8 +1,44 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/case
+    body:
+      encoding: UTF-8
+      string: '{"title":"test case","description":"test case"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 18 Aug 2019 05:23:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '367'
+    body:
+      encoding: UTF-8
+      string: '{"owner":"test","severity":2,"_routing":"AWyjLiUwloCWo96KV7JL","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1566105805202,"_parent":null,"createdBy":"test","caseId":5,"tlp":2,"metrics":{},"_id":"AWyjLiUwloCWo96KV7JL","id":"AWyjLiUwloCWo96KV7JL","_version":1,"pap":2,"startDate":1566105806126,"status":"Open"}'
+    http_version: 
+  recorded_at: Sun, 18 Aug 2019 05:23:27 GMT
+- request:
     method: get
-    uri: http://<API_ENDPOINT>:9000/api/case/AWobTO2jH8Rbrc-EdGw2
+    uri: http://<API_ENDPOINT>:9000/api/case/AWyjLiUwloCWo96KV7JL
     body:
       encoding: US-ASCII
       string: ''
@@ -23,17 +59,18 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - THE-HIVE-XSRF-TOKEN=38c38333402ee5df35ce970075b808b3df93ac51-1565530138695-27ec9df863229d0a9db5099e;
+      - THE-HIVE-XSRF-TOKEN=88d65f30e75fc2dab91879428aa5194bc8189104-1566105806202-84e26cdeade029d47902dd2a;
         Path=/
       Date:
-      - Sun, 11 Aug 2019 13:28:58 GMT
+      - Sun, 18 Aug 2019 05:23:26 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '375'
+      - '367'
     body:
       encoding: UTF-8
-      string: '{"owner":"test","severity":2,"_routing":"AWobTO2jH8Rbrc-EdGw2","flag":false,"customFields":{},"_type":"case","description":"test2","title":"test2","tags":["test"],"createdAt":1555236187047,"_parent":null,"createdBy":"test","caseId":2,"tlp":2,"metrics":{},"_id":"AWobTO2jH8Rbrc-EdGw2","id":"AWobTO2jH8Rbrc-EdGw2","_version":1,"pap":2,"startDate":1555236180000,"status":"Open"}'
+      string: '{"owner":"test","severity":2,"_routing":"AWyjLiUwloCWo96KV7JL","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1566105805202,"_parent":null,"createdBy":"test","caseId":5,"tlp":2,"metrics":{},"_id":"AWyjLiUwloCWo96KV7JL","id":"AWyjLiUwloCWo96KV7JL","_version":1,"pap":2,"startDate":1566105806126,"status":"Open"}'
     http_version: 
-  recorded_at: Sun, 11 Aug 2019 13:28:58 GMT
+  recorded_at: Sun, 18 Aug 2019 05:23:27 GMT
 recorded_with: VCR 5.0.0

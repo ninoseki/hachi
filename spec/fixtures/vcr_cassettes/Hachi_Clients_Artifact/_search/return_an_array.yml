@@ -25,16 +25,16 @@ http_interactions:
       message: OK
     headers:
       X-Total:
-      - '2'
+      - '0'
       Date:
-      - Sun, 11 Aug 2019 13:28:49 GMT
+      - Sun, 18 Aug 2019 05:26:40 GMT
       Transfer-Encoding:
       - chunked
       Content-Type:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"_routing":"AWobTO2jH8Rbrc-EdGw2","reports":{},"data":"1.1.1.1","dataType":"ip","_type":"case_artifact","sighted":false,"message":"","tags":["test"],"createdAt":1558948397118,"_parent":"AWobTO2jH8Rbrc-EdGw2","createdBy":"test","tlp":2,"_id":"948180dde99f9ada756677978c2ffeb7","id":"948180dde99f9ada756677978c2ffeb7","ioc":false,"_version":1,"startDate":1558948397163,"status":"Ok"},{"_routing":"AWoZBct1H8Rbrc-EdGwH","reports":{},"data":"1.1.1.1","dataType":"ip","_type":"case_artifact","sighted":false,"message":"","tags":["test"],"createdAt":1555197983904,"_parent":"AWoZBct1H8Rbrc-EdGwH","createdBy":"test","tlp":2,"_id":"3838d1265112313b4bb3f55acae37ad5","id":"3838d1265112313b4bb3f55acae37ad5","ioc":false,"_version":1,"startDate":1555197983922,"status":"Ok"}]'
+      string: "[]"
     http_version: 
-  recorded_at: Sun, 11 Aug 2019 13:28:49 GMT
+  recorded_at: Sun, 18 Aug 2019 05:26:41 GMT
 recorded_with: VCR 5.0.0

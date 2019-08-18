@@ -25,21 +25,17 @@ http_interactions:
       message: OK
     headers:
       X-Total:
-      - '5'
+      - '1'
       Date:
-      - Sun, 11 Aug 2019 13:29:00 GMT
+      - Sun, 18 Aug 2019 05:23:21 GMT
       Transfer-Encoding:
       - chunked
       Content-Type:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"owner":"test","severity":2,"_routing":"AWyA3iPaHwcsT20qNY0-","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1565530136807,"_parent":null,"createdBy":"test","caseId":10,"tlp":2,"metrics":{},"_id":"AWyA3iPaHwcsT20qNY0-","id":"AWyA3iPaHwcsT20qNY0-","_version":1,"pap":2,"startDate":1565530137560,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWobYR1NH8Rbrc-EdGxJ","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1555237509511,"_parent":null,"createdBy":"test","caseId":7,"tlp":2,"metrics":{},"_id":"AWobYR1NH8Rbrc-EdGxJ","id":"AWobYR1NH8Rbrc-EdGxJ","_version":1,"pap":2,"startDate":1555237510476,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWobYKN1H8Rbrc-EdGxD","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1555237479124,"_parent":null,"createdBy":"test","caseId":5,"tlp":2,"metrics":{},"_id":"AWobYKN1H8Rbrc-EdGxD","id":"AWobYKN1H8Rbrc-EdGxD","_version":1,"pap":2,"startDate":1555237479283,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWobUdkoH8Rbrc-EdGw6","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1555236508997,"_parent":null,"createdBy":"test","caseId":3,"tlp":2,"metrics":{},"_id":"AWobUdkoH8Rbrc-EdGw6","id":"AWobUdkoH8Rbrc-EdGw6","_version":1,"pap":2,"startDate":1555236509990,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWoZBct1H8Rbrc-EdGwH","flag":false,"updatedBy":"test","customFields":{},"_type":"case","description":"test\n  \n####
-        Merged with alert #71fec401ed1128a5a2e4 test\n\ntest","title":"test","tags":["test"],"createdAt":1555197970270,"_parent":null,"createdBy":"test","caseId":1,"tlp":2,"metrics":{},"_id":"AWoZBct1H8Rbrc-EdGwH","id":"AWoZBct1H8Rbrc-EdGwH","_version":2,"pap":2,"startDate":1555197960000,"status":"Open","updatedAt":1555280812091}]'
+      string: '[{"owner":"test","severity":2,"_routing":"AWyjJnLEloCWo96KV7I2","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1566105301484,"_parent":null,"createdBy":"test","caseId":1,"tlp":2,"metrics":{},"_id":"AWyjJnLEloCWo96KV7I2","id":"AWyjJnLEloCWo96KV7I2","_version":1,"pap":2,"startDate":1566105301687,"status":"Open"}]'
     http_version: 
-  recorded_at: Sun, 11 Aug 2019 13:29:00 GMT
+  recorded_at: Sun, 18 Aug 2019 05:23:22 GMT
 recorded_with: VCR 5.0.0

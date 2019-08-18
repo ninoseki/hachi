@@ -25,15 +25,15 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Sun, 11 Aug 2019 13:28:58 GMT
+      - Sun, 18 Aug 2019 05:23:28 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '368'
+      - '367'
     body:
       encoding: UTF-8
-      string: '{"owner":"test","severity":2,"_routing":"AWyA3iPaHwcsT20qNY0-","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1565530136807,"_parent":null,"createdBy":"test","caseId":10,"tlp":2,"metrics":{},"_id":"AWyA3iPaHwcsT20qNY0-","id":"AWyA3iPaHwcsT20qNY0-","_version":1,"pap":2,"startDate":1565530137560,"status":"Open"}'
+      string: '{"owner":"test","severity":2,"_routing":"AWyjLik5loCWo96KV7JN","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1566105806230,"_parent":null,"createdBy":"test","caseId":6,"tlp":2,"metrics":{},"_id":"AWyjLik5loCWo96KV7JN","id":"AWyjLik5loCWo96KV7JN","_version":1,"pap":2,"startDate":1566105807160,"status":"Open"}'
     http_version: 
-  recorded_at: Sun, 11 Aug 2019 13:28:58 GMT
+  recorded_at: Sun, 18 Aug 2019 05:23:29 GMT
 recorded_with: VCR 5.0.0

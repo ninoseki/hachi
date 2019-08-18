@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/alert
     body:
       encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"f402668cda7525ca0b8e","artifacts":[{"data":"1.1.1.1","dataType":"ip","message":"test"},{"data":"github.com","dataType":"domain","tags":["test"]}]}'
+      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"0f8d4fce5b0a9c32a45b","artifacts":[{"data":"1.1.1.1","dataType":"ip","message":"test"},{"data":"github.com","dataType":"domain","tags":["test"]}]}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -25,15 +25,15 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Sun, 11 Aug 2019 13:28:56 GMT
+      - Sun, 18 Aug 2019 05:20:54 GMT
       Content-Type:
       - application/json
       Content-Length:
       - '566'
     body:
       encoding: UTF-8
-      string: '{"date":1565530135562,"severity":2,"_routing":"7b1b3c7cadae4ab7d50d461b93d905db","customFields":{},"_type":"alert","description":"test","lastSyncDate":1565530135560,"source":"test","type":"test","follow":true,"title":"Test
-        Alert","createdAt":1565530135553,"_parent":null,"createdBy":"test","tlp":2,"_id":"7b1b3c7cadae4ab7d50d461b93d905db","id":"7b1b3c7cadae4ab7d50d461b93d905db","sourceRef":"f402668cda7525ca0b8e","_version":1,"artifacts":[{"data":"1.1.1.1","dataType":"ip","message":"test"},{"data":"github.com","dataType":"domain","tags":["test"]}],"status":"New"}'
+      string: '{"date":1566105653725,"severity":2,"_routing":"da8de6070de1c12a5c1778fcdbdbd45d","customFields":{},"_type":"alert","description":"test","lastSyncDate":1566105653724,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1566105653716,"_parent":null,"createdBy":"test","tlp":2,"_id":"da8de6070de1c12a5c1778fcdbdbd45d","id":"da8de6070de1c12a5c1778fcdbdbd45d","sourceRef":"0f8d4fce5b0a9c32a45b","_version":1,"artifacts":[{"data":"1.1.1.1","dataType":"ip","message":"test"},{"data":"github.com","dataType":"domain","tags":["test"]}],"status":"New"}'
     http_version: 
-  recorded_at: Sun, 11 Aug 2019 13:28:56 GMT
+  recorded_at: Sun, 18 Aug 2019 05:20:55 GMT
 recorded_with: VCR 5.0.0
