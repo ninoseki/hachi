@@ -2,9 +2,10 @@
 
 RSpec.describe Hachi::Clients::Case, :vcr do
   let(:api) { Hachi::API.new }
-  let(:id) { "AWobTO2jH8Rbrc-EdGw2" }
   let(:title) { "test case" }
   let(:description) { "test case" }
+
+  let(:id) { api.case.create(title: title, description: description)&.dig("_id") }
 
   describe "#list" do
     it "retuns an array" do
@@ -28,10 +29,10 @@ RSpec.describe Hachi::Clients::Case, :vcr do
   end
 
   describe "#delete_by_id" do
-    let(:id) { api.case.create(title: title, description: description)&.dig("_id") }
+    let(:id_to_delete) { api.case.create(title: title, description: description)&.dig("_id") }
 
     it "retuns an empty string" do
-      res = api.case.delete_by_id(id)
+      res = api.case.delete_by_id(id_to_delete)
       expect(res.empty?).to be true
     end
   end

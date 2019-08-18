@@ -1,8 +1,78 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/case
+    body:
+      encoding: UTF-8
+      string: '{"title":"test","description":"test"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 18 Aug 2019 05:26:42 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '357'
+    body:
+      encoding: UTF-8
+      string: '{"owner":"test","severity":2,"_routing":"AWyjMSE2loCWo96KV7JX","flag":false,"customFields":{},"_type":"case","description":"test","title":"test","createdAt":1566106000823,"_parent":null,"createdBy":"test","caseId":9,"tlp":2,"metrics":{},"_id":"AWyjMSE2loCWo96KV7JX","id":"AWyjMSE2loCWo96KV7JX","_version":1,"pap":2,"startDate":1566106001712,"status":"Open"}'
+    http_version: 
+  recorded_at: Sun, 18 Aug 2019 05:26:43 GMT
+- request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/case/AWyjMSE2loCWo96KV7JX/artifact
+    body:
+      encoding: UTF-8
+      string: '{"data":"example.com","dataType":"domain","message":"test"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 18 Aug 2019 05:26:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '388'
+    body:
+      encoding: UTF-8
+      string: '{"_routing":"AWyjMSE2loCWo96KV7JX","reports":{},"data":"example.com","dataType":"domain","_type":"case_artifact","sighted":false,"message":"test","tags":[],"createdAt":1566106003061,"_parent":"AWyjMSE2loCWo96KV7JX","createdBy":"test","tlp":2,"_id":"725561f363b2af3f21575463ab21fc43","id":"725561f363b2af3f21575463ab21fc43","ioc":false,"_version":1,"startDate":1566106003062,"status":"Ok"}'
+    http_version: 
+  recorded_at: Sun, 18 Aug 2019 05:26:44 GMT
+- request:
     method: get
-    uri: http://<API_ENDPOINT>:9000/api/case/artifact/e6b9ea938e00b088a468a86c38b7717c/similar
+    uri: http://<API_ENDPOINT>:9000/api/case/artifact/725561f363b2af3f21575463ab21fc43/similar
     body:
       encoding: US-ASCII
       string: ''
@@ -25,10 +95,10 @@ http_interactions:
       X-Total:
       - '0'
       Set-Cookie:
-      - THE-HIVE-XSRF-TOKEN=a1ea2e9f550566f1a3cc3bea3ee5a20581df1083-1565530129710-db5e02882ee8282e8bfd700e;
+      - THE-HIVE-XSRF-TOKEN=210835ca0907c29b6e0dcc0179006f23dfa2c64d-1566106003841-dbbd77f53a8194e040af8865;
         Path=/
       Date:
-      - Sun, 11 Aug 2019 13:28:49 GMT
+      - Sun, 18 Aug 2019 05:26:43 GMT
       Transfer-Encoding:
       - chunked
       Content-Type:
@@ -37,5 +107,5 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Sun, 11 Aug 2019 13:28:49 GMT
+  recorded_at: Sun, 18 Aug 2019 05:26:44 GMT
 recorded_with: VCR 5.0.0

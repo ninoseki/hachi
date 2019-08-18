@@ -1,8 +1,78 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/case
+    body:
+      encoding: UTF-8
+      string: '{"title":"test","description":"test"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 18 Aug 2019 05:26:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '358'
+    body:
+      encoding: UTF-8
+      string: '{"owner":"test","severity":2,"_routing":"AWyjMS09loCWo96KV7Ja","flag":false,"customFields":{},"_type":"case","description":"test","title":"test","createdAt":1566106003867,"_parent":null,"createdBy":"test","caseId":10,"tlp":2,"metrics":{},"_id":"AWyjMS09loCWo96KV7Ja","id":"AWyjMS09loCWo96KV7Ja","_version":1,"pap":2,"startDate":1566106004796,"status":"Open"}'
+    http_version: 
+  recorded_at: Sun, 18 Aug 2019 05:26:46 GMT
+- request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/case/AWyjMS09loCWo96KV7Ja/artifact
+    body:
+      encoding: UTF-8
+      string: '{"data":"example.com","dataType":"domain","message":"test"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 18 Aug 2019 05:26:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '388'
+    body:
+      encoding: UTF-8
+      string: '{"_routing":"AWyjMS09loCWo96KV7Ja","reports":{},"data":"example.com","dataType":"domain","_type":"case_artifact","sighted":false,"message":"test","tags":[],"createdAt":1566106005874,"_parent":"AWyjMS09loCWo96KV7Ja","createdBy":"test","tlp":2,"_id":"c9159b414efb2773de4d6ef89244dbd7","id":"c9159b414efb2773de4d6ef89244dbd7","ioc":false,"_version":1,"startDate":1566106005875,"status":"Ok"}'
+    http_version: 
+  recorded_at: Sun, 18 Aug 2019 05:26:47 GMT
+- request:
     method: get
-    uri: http://<API_ENDPOINT>:9000/api/case/artifact/e6b9ea938e00b088a468a86c38b7717c
+    uri: http://<API_ENDPOINT>:9000/api/case/artifact/c9159b414efb2773de4d6ef89244dbd7
     body:
       encoding: US-ASCII
       string: ''
@@ -23,17 +93,17 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - THE-HIVE-XSRF-TOKEN=40a042a0090ef45c2bbbce52f685899e67c987c2-1565530130014-090501e21a822823e3bde493;
+      - THE-HIVE-XSRF-TOKEN=630b26f2849f208e3809dc07df1613a2e1af685d-1566106006880-7c1acb9a1065d441cca2507e;
         Path=/
       Date:
-      - Sun, 11 Aug 2019 13:28:50 GMT
+      - Sun, 18 Aug 2019 05:26:46 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '380'
+      - '388'
     body:
       encoding: UTF-8
-      string: '{"_routing":"AWoZBct1H8Rbrc-EdGwH","reports":{},"data":"8.8.8.8","dataType":"ip","_type":"case_artifact","sighted":false,"message":"test","tags":[],"createdAt":1555219378153,"_parent":"AWoZBct1H8Rbrc-EdGwH","createdBy":"test","tlp":2,"_id":"e6b9ea938e00b088a468a86c38b7717c","id":"e6b9ea938e00b088a468a86c38b7717c","ioc":false,"_version":1,"startDate":1555219378154,"status":"Ok"}'
+      string: '{"_routing":"AWyjMS09loCWo96KV7Ja","reports":{},"data":"example.com","dataType":"domain","_type":"case_artifact","sighted":false,"message":"test","tags":[],"createdAt":1566106005874,"_parent":"AWyjMS09loCWo96KV7Ja","createdBy":"test","tlp":2,"_id":"c9159b414efb2773de4d6ef89244dbd7","id":"c9159b414efb2773de4d6ef89244dbd7","ioc":false,"_version":1,"startDate":1566106005875,"status":"Ok"}'
     http_version: 
-  recorded_at: Sun, 11 Aug 2019 13:28:50 GMT
+  recorded_at: Sun, 18 Aug 2019 05:26:47 GMT
 recorded_with: VCR 5.0.0

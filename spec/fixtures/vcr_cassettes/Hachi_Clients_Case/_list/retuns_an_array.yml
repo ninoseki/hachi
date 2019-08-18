@@ -23,28 +23,25 @@ http_interactions:
       message: OK
     headers:
       X-Total:
-      - '11'
+      - '6'
       Set-Cookie:
-      - THE-HIVE-XSRF-TOKEN=b22f4f932613d5e556ecbb41c6976fa4c0f3a275-1565530140827-be5ab7e1956abad3f2595efc;
+      - THE-HIVE-XSRF-TOKEN=0e7f3b3f0bb90e9674e604b4ecfff7bd0e54a6af-1566105808244-1675887fe7b106782df5b32f;
         Path=/
       Date:
-      - Sun, 11 Aug 2019 13:29:00 GMT
+      - Sun, 18 Aug 2019 05:23:28 GMT
       Transfer-Encoding:
       - chunked
       Content-Type:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"owner":"test","severity":2,"_routing":"AWyA3ivpHwcsT20qNY1A","flag":false,"updatedBy":"test","customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1565530138728,"_parent":null,"createdBy":"test","caseId":11,"tlp":2,"metrics":{},"_id":"AWyA3ivpHwcsT20qNY1A","id":"AWyA3ivpHwcsT20qNY1A","_version":2,"pap":2,"startDate":1565530139624,"status":"Deleted","updatedAt":1565530139713},{"owner":"test","severity":2,"_routing":"AWyA3iPaHwcsT20qNY0-","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1565530136807,"_parent":null,"createdBy":"test","caseId":10,"tlp":2,"metrics":{},"_id":"AWyA3iPaHwcsT20qNY0-","id":"AWyA3iPaHwcsT20qNY0-","_version":1,"pap":2,"startDate":1565530137560,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWujMbfIgjHGpuIumJO-","flag":false,"customFields":{},"_type":"case","description":"sagawa","title":"sagawa","tags":[],"createdAt":1561811072109,"_parent":null,"createdBy":"test","caseId":9,"tlp":2,"metrics":{},"_id":"AWujMbfIgjHGpuIumJO-","id":"AWujMbfIgjHGpuIumJO-","_version":1,"pap":2,"startDate":1561811040000,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWqCr50PH8Rbrc-EdGyx","flag":false,"customFields":{},"_type":"case","description":"Query:
-        (\"PANDA\" AND \"SMAdmin\" AND \"layui\")","title":"Censys lookup","tags":[],"createdAt":1556970707818,"_parent":null,"createdBy":"test","caseId":8,"tlp":2,"metrics":{},"_id":"AWqCr50PH8Rbrc-EdGyx","id":"AWqCr50PH8Rbrc-EdGyx","_version":1,"pap":2,"startDate":1556970590365,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWobYRFsH8Rbrc-EdGxG","flag":false,"updatedBy":"test","customFields":{},"_type":"case","description":"test
-        case\n  \n#### Merged with alert #2836726fdc968e913ab3 Shodan lookup\n\nQuery:
-        dev.min.js","title":"test case","createdAt":1555237507327,"_parent":null,"createdBy":"test","caseId":6,"tlp":2,"metrics":{},"_id":"AWobYRFsH8Rbrc-EdGxG","id":"AWobYRFsH8Rbrc-EdGxG","_version":3,"startDate":1555237507435,"pap":2,"status":"Deleted","updatedAt":1557440098252},{"owner":"test","severity":2,"_routing":"AWobYR1NH8Rbrc-EdGxJ","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1555237509511,"_parent":null,"createdBy":"test","caseId":7,"tlp":2,"metrics":{},"_id":"AWobYR1NH8Rbrc-EdGxJ","id":"AWobYR1NH8Rbrc-EdGxJ","_version":1,"pap":2,"startDate":1555237510476,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWobYKN1H8Rbrc-EdGxD","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1555237479124,"_parent":null,"createdBy":"test","caseId":5,"tlp":2,"metrics":{},"_id":"AWobYKN1H8Rbrc-EdGxD","id":"AWobYKN1H8Rbrc-EdGxD","_version":1,"pap":2,"startDate":1555237479283,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWobUeEPH8Rbrc-EdGw8","flag":false,"updatedBy":"test","customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1555236511042,"_parent":null,"createdBy":"test","caseId":4,"tlp":2,"metrics":{},"_id":"AWobUeEPH8Rbrc-EdGw8","id":"AWobUeEPH8Rbrc-EdGw8","_version":2,"pap":2,"startDate":1555236512014,"status":"Deleted","updatedAt":1555236513077},{"owner":"test","severity":2,"_routing":"AWobUdkoH8Rbrc-EdGw6","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1555236508997,"_parent":null,"createdBy":"test","caseId":3,"tlp":2,"metrics":{},"_id":"AWobUdkoH8Rbrc-EdGw6","id":"AWobUdkoH8Rbrc-EdGw6","_version":1,"pap":2,"startDate":1555236509990,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWobTO2jH8Rbrc-EdGw2","flag":false,"customFields":{},"_type":"case","description":"test2","title":"test2","tags":["test"],"createdAt":1555236187047,"_parent":null,"createdBy":"test","caseId":2,"tlp":2,"metrics":{},"_id":"AWobTO2jH8Rbrc-EdGw2","id":"AWobTO2jH8Rbrc-EdGw2","_version":1,"pap":2,"startDate":1555236180000,"status":"Open"}]'
+      string: '[{"owner":"test","severity":2,"_routing":"AWyjLik5loCWo96KV7JN","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1566105806230,"_parent":null,"createdBy":"test","caseId":6,"tlp":2,"metrics":{},"_id":"AWyjLik5loCWo96KV7JN","id":"AWyjLik5loCWo96KV7JN","_version":1,"pap":2,"startDate":1566105807160,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWyjLiUwloCWo96KV7JL","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1566105805202,"_parent":null,"createdBy":"test","caseId":5,"tlp":2,"metrics":{},"_id":"AWyjLiUwloCWo96KV7JL","id":"AWyjLiUwloCWo96KV7JL","_version":1,"pap":2,"startDate":1566105806126,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWyjLiELloCWo96KV7JJ","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1566105804095,"_parent":null,"createdBy":"test","caseId":4,"tlp":2,"metrics":{},"_id":"AWyjLiELloCWo96KV7JJ","id":"AWyjLiELloCWo96KV7JJ","_version":1,"pap":2,"startDate":1566105805064,"status":"Open"},{"owner":"test","severity":2,"_routing":"AWyjLhUbloCWo96KV7JG","flag":false,"updatedBy":"test","customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1566105801687,"_parent":null,"createdBy":"test","caseId":3,"tlp":2,"metrics":{},"_id":"AWyjLhUbloCWo96KV7JG","id":"AWyjLhUbloCWo96KV7JG","_version":2,"startDate":1566105802010,"pap":2,"status":"Deleted","updatedAt":1566105803070},{"owner":"test","severity":2,"_routing":"AWyjJnqoloCWo96KV7I4","flag":false,"updatedBy":"test","customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1566105302746,"_parent":null,"createdBy":"test","caseId":2,"tlp":2,"metrics":{},"_id":"AWyjJnqoloCWo96KV7I4","id":"AWyjJnqoloCWo96KV7I4","_version":2,"pap":2,"startDate":1566105303715,"status":"Deleted","updatedAt":1566105304829},{"owner":"test","severity":2,"_routing":"AWyjJnLEloCWo96KV7I2","flag":false,"customFields":{},"_type":"case","description":"test
+        case","title":"test case","createdAt":1566105301484,"_parent":null,"createdBy":"test","caseId":1,"tlp":2,"metrics":{},"_id":"AWyjJnLEloCWo96KV7I2","id":"AWyjJnLEloCWo96KV7I2","_version":1,"pap":2,"startDate":1566105301687,"status":"Open"}]'
     http_version: 
-  recorded_at: Sun, 11 Aug 2019 13:29:00 GMT
+  recorded_at: Sun, 18 Aug 2019 05:23:29 GMT
 recorded_with: VCR 5.0.0

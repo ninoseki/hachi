@@ -2,8 +2,9 @@
 
 RSpec.describe Hachi::Clients::Artifact, :vcr do
   let(:api) { Hachi::API.new }
-  let(:case_id) { "AWoZBct1H8Rbrc-EdGwH" }
-  let(:id) { "e6b9ea938e00b088a468a86c38b7717c" }
+
+  let(:case_id) { api.case.create(title: "test", description: "test")&.dig("_id") }
+  let(:id) { api.artifact.create(case_id, data: "example.com", data_type: "domain", message: "test")&.dig("_id") }
 
   describe "#create" do
     it "returns a hash" do
@@ -20,10 +21,10 @@ RSpec.describe Hachi::Clients::Artifact, :vcr do
   end
 
   describe "#delete_by_id" do
-    let(:id) { api.artifact.create(case_id, data: "example.com", data_type: "domain", message: "test")&.dig("_id") }
+    let(:id_to_delete) { api.artifact.create(case_id, data: "example.com", data_type: "domain", message: "test")&.dig("_id") }
 
     it "returns an empty string" do
-      res = api.artifact.delete_by_id(id)
+      res = api.artifact.delete_by_id(id_to_delete)
       expect(res.empty?).to eq(true)
     end
   end
