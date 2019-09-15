@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<API_ENDPOINT>:9000/api/user/current
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - THE-HIVE-XSRF-TOKEN=4c69fe20b08985fae42df71aff1fe173071ca0c6-1568516931363-318efd28d1333c2192cdea1e;
+        Path=/
+      Date:
+      - Sun, 15 Sep 2019 03:08:51 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '277'
+    body:
+      encoding: UTF-8
+      string: '{"_routing":"test","hasKey":true,"preferences":{},"updatedBy":"test","roles":["read","write","admin","alert"],"_type":"user","createdAt":1555197946940,"_parent":null,"createdBy":"init","name":"test","_id":"test","id":"test","_version":6,"status":"Ok","updatedAt":1559113148343}'
+    http_version: 
+  recorded_at: Sun, 15 Sep 2019 03:08:51 GMT
+recorded_with: VCR 5.0.0

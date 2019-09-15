@@ -83,6 +83,21 @@ See `samples` for more.
 | GET         | /api/case/:caseId/links            | Get list of cases linked to this case | `#api.case.links(id)`                                                                                                |
 | POST        | /api/case/:caseId1/_merge/:caseId2 | Merge two cases                       | N/A                                                                                                                  |
 
+### User
+
+| HTTP Method | URI                               | Action              | API method                                           |
+|-------------|-----------------------------------|---------------------|------------------------------------------------------|
+| GET         | /api/logout                       | Logout              | N/A                                                  |
+| POST        | /api/login                        | User login          | N/A                                                  |
+| GET         | /api/user/current                 | Get current user    | `#api.user.current`                                  |
+| POST        | /api/user/_search                 | Find user           | N/A                                                  |
+| POST        | /api/user                         | Create a user       | `#api.user.create(login:, name:, roles:, password:)` |
+| GET         | /api/user/:userId                 | Get a user          | `#api.user.get_by_id(id)`                            |
+| DELETE      | /api/user/:userId                 | Delete a case       | `#api.user.delete_by_id(id)`                         |
+| PATCH       | /api/user/:userId                 | Update user details | N/A                                                  |
+| POST        | /api/user/:userId/password/set    | Set password        | N/A                                                  |
+| POST        | /api/user/:userId/password/change | Change password     | N/A                                                  |
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

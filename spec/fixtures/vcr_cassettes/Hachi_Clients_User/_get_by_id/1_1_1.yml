@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/user
+    body:
+      encoding: UTF-8
+      string: '{"login":"georges","name":"Georges Abitbol","roles":["read","write"],"password":"La
+        classe"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 15 Sep 2019 02:58:21 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '220'
+    body:
+      encoding: UTF-8
+      string: '{"_routing":"georges","createdAt":1568516300359,"hasKey":false,"_parent":null,"createdBy":"test","roles":["read","write"],"name":"Georges
+        Abitbol","_type":"user","_id":"georges","id":"georges","_version":1,"status":"Ok"}'
+    http_version: 
+  recorded_at: Sun, 15 Sep 2019 02:58:21 GMT
+- request:
+    method: get
+    uri: http://<API_ENDPOINT>:9000/api/user/georges
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - THE-HIVE-XSRF-TOKEN=c422627207ac5f414d099e4a9b526c2d39e628da-1568516301767-016273587365dd223869585e;
+        Path=/
+      Date:
+      - Sun, 15 Sep 2019 02:58:21 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '265'
+    body:
+      encoding: UTF-8
+      string: '{"_routing":"georges","hasKey":false,"updatedBy":"test","roles":["read","write"],"_type":"user","createdAt":1568516300359,"_parent":null,"createdBy":"test","name":"Georges
+        Abitbol","_id":"georges","id":"georges","_version":2,"status":"Ok","updatedAt":1568516300724}'
+    http_version: 
+  recorded_at: Sun, 15 Sep 2019 02:58:21 GMT
+recorded_with: VCR 5.0.0
