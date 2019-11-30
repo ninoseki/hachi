@@ -37,6 +37,10 @@ module Hachi
       def links(id)
         get("/api/case/#{id}/links") { |json| json }
       end
+
+      def merge(id1, id2)
+        post("/api/case/#{id1}/_merge/#{id2}") { |json| json }
+      end
     end
   end
 end

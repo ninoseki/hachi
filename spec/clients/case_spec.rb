@@ -50,4 +50,14 @@ RSpec.describe Hachi::Clients::Case, :vcr do
       expect(res).to be_an(Array)
     end
   end
+
+  describe "#merge" do
+    let(:id1) { api.case.create(title: title, description: description)&.dig("_id") }
+    let(:id2) { api.case.create(title: title, description: description)&.dig("_id") }
+
+    it do
+      res = api.case.merge(id1, id2)
+      expect(res).to be_a(Hash)
+    end
+  end
 end
