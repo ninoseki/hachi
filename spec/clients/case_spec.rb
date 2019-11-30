@@ -60,4 +60,19 @@ RSpec.describe Hachi::Clients::Case, :vcr do
       expect(res).to be_a(Hash)
     end
   end
+
+  describe "#update" do
+    let(:id_to_update) { api.case.create(title: title, description: description)&.dig("_id") }
+    let(:attributes) {
+      {
+        title: "Update",
+        description: "Update",
+      }
+    }
+
+    it do
+      res = api.case.update(id_to_update, attributes)
+      expect(res).to be_a(Hash)
+    end
+  end
 end
