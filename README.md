@@ -1,7 +1,7 @@
 # Hachi
 
 [![Gem Version](https://badge.fury.io/rb/hachi.svg)](https://badge.fury.io/rb/hachi)
-[![Build Status](https://travis-ci.org/ninoseki/hachi.svg?branch=master)](https://travis-ci.org/ninoseki/hachi)
+[![Build Status](https://travis-ci.com/ninoseki/hachi.svg?branch=master)](https://travis-ci.com/ninoseki/hachi)
 [![Coverage Status](https://coveralls.io/repos/github/ninoseki/hachi/badge.svg?branch=master)](https://coveralls.io/github/ninoseki/hachi?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/ninoseki/hachi/badge)](https://www.codefactor.io/repository/github/ninoseki/hachi)
 
