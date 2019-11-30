@@ -77,4 +77,42 @@ RSpec.describe Hachi::Clients::Alert, :vcr do
       end
     end
   end
+
+  describe "#mark_as_read" do
+    let(:id_to_mark) { api.alert.create(title: title, description: description, type: type, source: source)&.dig("_id") }
+
+    it do
+      res = api.alert.mark_as_read(id)
+      expect(res).to be_a(Hash)
+    end
+  end
+
+  describe "#promote_to_case" do
+    let(:id_to_promote) { api.alert.create(title: title, description: description, type: type, source: source)&.dig("_id") }
+
+    it do
+      res = api.alert.promote_to_case(id)
+      expect(res).to be_a(Hash)
+    end
+  end
+
+  describe "#merge_into_case" do
+    let(:id_to_merge) { api.alert.create(title: title, description: description, type: type, source: source)&.dig("_id") }
+
+    let(:case_id) { api.case.create(title: title, description: description)&.dig("_id") }
+
+    it do
+      res = api.alert.merge_into_case(id, case_id)
+      expect(res).to be_a(Hash)
+    end
+  end
+
+  describe "#mark_as_unread" do
+    let(:id_to_mark) { api.alert.create(title: title, description: description, type: type, source: source)&.dig("_id") }
+
+    it do
+      res = api.alert.mark_as_unread(id)
+      expect(res).to be_a(Hash)
+    end
+  end
 end
