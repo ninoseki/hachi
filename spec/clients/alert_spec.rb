@@ -115,4 +115,14 @@ RSpec.describe Hachi::Clients::Alert, :vcr do
       expect(res).to be_a(Hash)
     end
   end
+
+  describe "#update" do
+    let(:id_to_update) { api.alert.create(title: title, description: description, type: type, source: source)&.dig("_id") }
+    let(:attributes) { { title: "Updated", description: "Updated" } }
+
+    it do
+      res = api.alert.update(id_to_update, attributes)
+      expect(res).to be_a(Hash)
+    end
+  end
 end
