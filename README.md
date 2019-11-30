@@ -81,7 +81,7 @@ See `samples` for more.
 | PATCH       | /api/case/:caseId                  | Update a case                         | N/A                                                                                                                  |
 | DELETE      | /api/case/:caseId                  | Remove a case                         | `#api.case.delete_by_id(id)`                                                                                         |
 | GET         | /api/case/:caseId/links            | Get list of cases linked to this case | `#api.case.links(id)`                                                                                                |
-| POST        | /api/case/:caseId1/_merge/:caseId2 | Merge two cases                       | N/A                                                                                                                  |
+| POST        | /api/case/:caseId1/_merge/:caseId2 | Merge two cases                       | `#api.case.merge(id1, id2)`                                                                                          |
 
 ### User
 
