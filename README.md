@@ -48,12 +48,12 @@ See `samples` for more.
 | GET         | /api/alert/:alertId               | Get an alert                | `#api.alert.get_by_id(id)`                                                                                                                                          |
 | PATCH       | /api/alert/:alertId               | Update an alert             | N/A                                                                                                                                                                 |
 | DELETE      | /api/alert/:alertId               | Delete an alert             | `#api.alert.delete_by_id(id)`                                                                                                                                       |
-| POST        | /api/alert/:alertId/markAsRead    | Mark an alert as read       | N/A                                                                                                                                                                 |
-| POST        | /api/alert/:alertId/markAsUnread  | Mark an alert as unread     | N/A                                                                                                                                                                 |
-| POST        | /api/alert/:alertId/createCase    | Create a case from an alert | N/A                                                                                                                                                                 |
+| POST        | /api/alert/:alertId/markAsRead    | Mark an alert as read       | `#api.alert.mark_as_read(id)`                                                                                                                                       |
+| POST        | /api/alert/:alertId/markAsUnread  | Mark an alert as unread     | `#api.alert.mark_as_unread(id)`                                                                                                                                     |
+| POST        | /api/alert/:alertId/createCase    | Create a case from an alert | `#api.alert.promote_to_case(id)`                                                                                                                                    |
 | POST        | /api/alert/:alertId/follow        | Follow an alert             | N/A                                                                                                                                                                 |
 | POST        | /api/alert/:alertId/unfollow      | Unfollow an alert           | N/A                                                                                                                                                                 |
-| POST        | /api/alert/:alertId/merge/:caseId | Merge an alert in a case    | N/A                                                                                                                                                                 |
+| POST        | /api/alert/:alertId/merge/:caseId | Merge an alert in a case    | `#api.alert.merge_into_case(*ids, case_id)`                                                                                                                         |
 
 ### Artifact(Observable)
 

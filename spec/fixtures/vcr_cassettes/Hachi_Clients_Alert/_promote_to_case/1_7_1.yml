@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/alert
+    body:
+      encoding: UTF-8
+      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"41250441a5490491e343"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sat, 30 Nov 2019 01:52:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '457'
+    body:
+      encoding: UTF-8
+      string: '{"date":1575078723827,"severity":2,"_routing":"15e28b2e2b9659a4817d94a9bc7acca0","customFields":{},"_type":"alert","description":"test","lastSyncDate":1575078723827,"source":"test","type":"test","follow":true,"title":"Test
+        Alert","createdAt":1575078723825,"_parent":null,"createdBy":"test","tlp":2,"_id":"15e28b2e2b9659a4817d94a9bc7acca0","id":"15e28b2e2b9659a4817d94a9bc7acca0","sourceRef":"41250441a5490491e343","_version":1,"artifacts":[],"status":"New"}'
+    http_version: 
+  recorded_at: Sat, 30 Nov 2019 01:52:04 GMT
+- request:
+    method: post
+    uri: http://<API_ENDPOINT>:9000/api/alert/15e28b2e2b9659a4817d94a9bc7acca0/createCase
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - "<API_ENDPOINT>:9000"
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <API_KEY>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sat, 30 Nov 2019 01:52:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '374'
+    body:
+      encoding: UTF-8
+      string: '{"owner":"test","severity":2,"_routing":"AW66AgT37fbOoAgpbfqS","flag":false,"customFields":{},"_type":"case","description":"test","title":"Test
+        Alert","tags":[],"createdAt":1575078723897,"_parent":null,"createdBy":"test","caseId":14,"tlp":2,"metrics":{},"_id":"AW66AgT37fbOoAgpbfqS","id":"AW66AgT37fbOoAgpbfqS","_version":1,"pap":2,"startDate":1575078723827,"status":"Open"}'
+    http_version: 
+  recorded_at: Sat, 30 Nov 2019 01:52:07 GMT
+recorded_with: VCR 5.0.0

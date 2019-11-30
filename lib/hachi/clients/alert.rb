@@ -39,6 +39,26 @@ module Hachi
       def search(attributes, range: "all", sort: nil)
         _search("/api/alert/_search", attributes: attributes, range: range, sort: sort) { |json| json }
       end
+
+      def mark_as_read(id)
+        post("/api/alert/#{id}/markAsRead") { |json| json }
+      end
+
+      def mark_as_unread(id)
+        post("/api/alert/#{id}/markAsUnread") { |json| json }
+      end
+
+      def promote_to_case(id)
+        post("/api/alert/#{id}/createCase") { |json| json }
+      end
+
+      def merge_into_case(*ids, case_id)
+        params = {
+          alertIds: ids,
+          caseId: case_id
+        }
+        post("/api/alert/merge/_bulk", params) { |json| json }
+      end
     end
   end
 end
