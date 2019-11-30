@@ -134,7 +134,7 @@ module Hachi
           if key == :data && value.is_a?(Array)
             { _or: decompose_data(value) }
           else
-            { _string: "#{key}:#{value}" }
+            { _string: "#{key}:\"#{value}\"" }
           end
         end
 
