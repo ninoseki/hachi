@@ -104,6 +104,18 @@ module Hachi
         request(delete, &block)
       end
 
+      def patch(path, params = {}, &block)
+        url = url_for(path)
+
+        patch = Net::HTTP::Patch.new(url)
+        patch.body = params.is_a?(Hash) ? params.to_json : params.to_s
+
+        patch.add_field "Content-Type", "application/json"
+        patch.add_field "Authorization", "Bearer #{api_key}"
+
+        request(patch, &block)
+      end
+
       def validate_range(range)
         return true if range == "all"
         raise ArgumentError, "range should be 'all' or `from-to`" unless range.match?(/(\d+)-(\d+)/)

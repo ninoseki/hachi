@@ -59,6 +59,18 @@ module Hachi
         }
         post("/api/alert/merge/_bulk", params) { |json| json }
       end
+
+      def update(id, title:, description:, severity: nil, tags: nil, tlp: nil, artifacts: nil)
+        attributes = {
+          title: title,
+          description: description,
+          severity: severity,
+          tags: tags,
+          tlp: tlp,
+          artifacts: artifacts,
+        }.compact
+        patch("/api/alert/#{id}", attributes) { |json| json }
+      end
     end
   end
 end

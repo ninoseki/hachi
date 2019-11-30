@@ -41,6 +41,27 @@ module Hachi
       def merge(id1, id2)
         post("/api/case/#{id1}/_merge/#{id2}") { |json| json }
       end
+
+      def update(id, title: nil, description: nil, severity: nil, start_date: nil, owner: nil, flag: nil, tlp: nil, tags: nil, status: nil, resolution_status: nil, impact_status: nil, summary: nil, end_date: nil, metrics: nil, custom_fields: nil )
+        attributes = {
+          title: title,
+          description: description,
+          severity: severity,
+          startDate: start_date,
+          owner: owner,
+          flag: flag,
+          tlp: tlp,
+          tags: tags,
+          status: status,
+          resolutionStatus: resolution_status,
+          impactStatus: impact_status,
+          summary: summary,
+          endDate: end_date,
+          metrics: metrics,
+          customFields: custom_fields
+        }.compact
+        patch("/api/case/#{id}", attributes) { |json| json }
+      end
     end
   end
 end
