@@ -129,7 +129,7 @@ module Hachi
       #
       def merge_into_case(*ids, case_id)
         params = {
-          alertIds: ids,
+          alertIds: ids.flatten,
           caseId: case_id
         }
         post("/api/alert/merge/_bulk", params) { |json| json }
