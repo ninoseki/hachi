@@ -30,7 +30,7 @@ module Hachi
         @type = type
         @source = source
         @source_ref = source_ref || SecureRandom.hex(10)
-        @artifacts = artifacts.nil? ? nil : artifacts.map { |a| Artifact.new a }
+        @artifacts = artifacts.nil? ? nil : artifacts.map { |a| Artifact.new(**a) }
         @follow = follow
 
         validate_date if date

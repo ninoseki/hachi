@@ -71,7 +71,7 @@ module Hachi
       #
       # @return [Hash]
       #
-      def search(attributes, range: "all")
+      def search(range: "all", **attributes)
         _search("/api/case/_search", attributes: attributes, range: range) { |json| json }
       end
 

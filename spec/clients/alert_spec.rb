@@ -121,7 +121,7 @@ RSpec.describe Hachi::Clients::Alert, :vcr do
     let(:attributes) { { title: "Updated", description: "Updated" } }
 
     it do
-      res = api.alert.update(id_to_update, attributes)
+      res = api.alert.update(id_to_update, **attributes)
       expect(res).to be_a(Hash)
     end
   end

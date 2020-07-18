@@ -71,7 +71,7 @@ RSpec.describe Hachi::Clients::Case, :vcr do
     }
 
     it do
-      res = api.case.update(id_to_update, attributes)
+      res = api.case.update(id_to_update, **attributes)
       expect(res).to be_a(Hash)
     end
   end
