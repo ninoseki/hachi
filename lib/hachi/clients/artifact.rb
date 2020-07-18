@@ -57,7 +57,7 @@ module Hachi
       #
       # @return [Array]
       #
-      def search(attributes, range: "all")
+      def search( range: "all", **attributes)
         _search("/api/case/artifact/_search", attributes: attributes, range: range) { |json| json }
       end
 
