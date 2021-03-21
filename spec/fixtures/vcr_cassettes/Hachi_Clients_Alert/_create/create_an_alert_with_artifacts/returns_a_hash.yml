@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/alert
     body:
       encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"0f8d4fce5b0a9c32a45b","artifacts":[{"data":"1.1.1.1","dataType":"ip","message":"test"},{"data":"github.com","dataType":"domain","tags":["test"]}]}'
+      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"a24b131d827c755d24a6","artifacts":[{"data":"1.1.1.1","dataType":"ip","message":"test"},{"data":"github.com","dataType":"domain","tags":["test"]}]}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -24,16 +24,17 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '829'
       Date:
-      - Sun, 18 Aug 2019 05:20:54 GMT
+      - Sun, 21 Mar 2021 05:11:46 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '566'
+      - '953'
     body:
       encoding: UTF-8
-      string: '{"date":1566105653725,"severity":2,"_routing":"da8de6070de1c12a5c1778fcdbdbd45d","customFields":{},"_type":"alert","description":"test","lastSyncDate":1566105653724,"source":"test","type":"test","follow":true,"title":"Test
-        Alert","createdAt":1566105653716,"_parent":null,"createdBy":"test","tlp":2,"_id":"da8de6070de1c12a5c1778fcdbdbd45d","id":"da8de6070de1c12a5c1778fcdbdbd45d","sourceRef":"0f8d4fce5b0a9c32a45b","_version":1,"artifacts":[{"data":"1.1.1.1","dataType":"ip","message":"test"},{"data":"github.com","dataType":"domain","tags":["test"]}],"status":"New"}'
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:20:55 GMT
-recorded_with: VCR 5.0.0
+      string: '{"_id":"~143592","id":"~143592","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303505976,"updatedAt":null,"_type":"alert","type":"test","source":"test","sourceRef":"a24b131d827c755d24a6","externalLink":null,"case":null,"title":"Test
+        Alert","description":"test","severity":2,"date":1616303505973,"tags":[],"tlp":2,"pap":2,"status":"New","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[{"_id":"~147688","id":"~147688","createdBy":"test@example.com","createdAt":1616303506043,"_type":"case_artifact","dataType":"ip","data":"1.1.1.1","startDate":1616303506043,"tlp":2,"tags":[],"ioc":false,"sighted":false,"message":"test","reports":{},"stats":{}},{"_id":"~151784","id":"~151784","createdBy":"test@example.com","createdAt":1616303506096,"_type":"case_artifact","dataType":"domain","data":"github.com","startDate":1616303506096,"tlp":2,"tags":["test"],"ioc":false,"sighted":false,"reports":{},"stats":{}}],"similarCases":[]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:46 GMT
+recorded_with: VCR 6.0.0

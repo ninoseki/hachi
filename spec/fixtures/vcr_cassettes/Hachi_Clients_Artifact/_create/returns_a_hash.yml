@@ -24,20 +24,21 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '601'
       Date:
-      - Sun, 18 Aug 2019 05:26:35 GMT
+      - Sun, 21 Mar 2021 05:11:52 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '357'
+      - '559'
     body:
       encoding: UTF-8
-      string: '{"owner":"test","severity":2,"_routing":"AWyjMQUBloCWo96KV7JQ","flag":false,"customFields":{},"_type":"case","description":"test","title":"test","createdAt":1566105994186,"_parent":null,"createdBy":"test","caseId":7,"tlp":2,"metrics":{},"_id":"AWyjMQUBloCWo96KV7JQ","id":"AWyjMQUBloCWo96KV7JQ","_version":1,"pap":2,"startDate":1566105994495,"status":"Open"}'
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:26:36 GMT
+      string: '{"_id":"~69656","id":"~69656","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303511720,"updatedAt":null,"_type":"case","caseId":16,"title":"test","description":"test","severity":2,"startDate":1616303511652,"endDate":null,"impactStatus":null,"resolutionStatus":null,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"Open","summary":null,"owner":"test@example.com","customFields":{},"stats":{},"permissions":["manageShare","manageAnalyse","manageTask","manageCase","managePage","manageObservable","manageAlert","accessTheHiveFS","manageAction"]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:52 GMT
 - request:
     method: post
-    uri: http://<API_ENDPOINT>:9000/api/case/AWyjMQUBloCWo96KV7JQ/artifact
+    uri: http://<API_ENDPOINT>:9000/api/case/~69656/artifact
     body:
       encoding: UTF-8
       string: '{"data":"9.9.9.9","dataType":"ip","message":"test"}'
@@ -59,15 +60,16 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '670'
       Date:
-      - Sun, 18 Aug 2019 05:26:36 GMT
+      - Sun, 21 Mar 2021 05:11:52 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '380'
+      - '259'
     body:
       encoding: UTF-8
-      string: '{"_routing":"AWyjMQUBloCWo96KV7JQ","reports":{},"data":"9.9.9.9","dataType":"ip","_type":"case_artifact","sighted":false,"message":"test","tags":[],"createdAt":1566105995577,"_parent":"AWyjMQUBloCWo96KV7JQ","createdBy":"test","tlp":2,"_id":"5b8ca80fe69858f8a6a1f6b40d9f3ac8","id":"5b8ca80fe69858f8a6a1f6b40d9f3ac8","ioc":false,"_version":1,"startDate":1566105995585,"status":"Ok"}'
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:26:37 GMT
-recorded_with: VCR 5.0.0
+      string: '[{"_id":"~73920","id":"~73920","createdBy":"test@example.com","createdAt":1616303512320,"_type":"case_artifact","dataType":"ip","data":"9.9.9.9","startDate":1616303512320,"tlp":2,"tags":[],"ioc":false,"sighted":false,"message":"test","reports":{},"stats":{}}]'
+  recorded_at: Sun, 21 Mar 2021 05:11:52 GMT
+recorded_with: VCR 6.0.0

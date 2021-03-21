@@ -24,7 +24,7 @@ module Hachi
           tags: tags,
         )
 
-        post("/api/case/#{case_id}/artifact", artifact.payload) { |json| json }
+        post("/api/case/#{case_id}/artifact", json: artifact.payload) { |json| json }
       end
 
       #
@@ -52,13 +52,13 @@ module Hachi
       #
       # Find artifacts
       #
-      # @param [Hash] attributes
+      # @param [Hash] query
       # @param [String] range
       #
       # @return [Array]
       #
-      def search( range: "all", **attributes)
-        _search("/api/case/artifact/_search", attributes: attributes, range: range) { |json| json }
+      def search(query, range: "all")
+        _search("/api/case/artifact/_search", query: query, range: range) { |json| json }
       end
 
       #

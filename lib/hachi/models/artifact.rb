@@ -5,11 +5,7 @@ module Hachi
     class Artifact < Base
       DATA_TYPES = %w(filename file fqdn hash uri_path ip domain mail autonomous-system registry mail_subject regexp user-agent other url).freeze
 
-      attr_reader :data
-      attr_reader :data_type
-      attr_reader :message
-      attr_reader :tlp
-      attr_reader :tags
+      attr_reader :data, :data_type, :message, :tlp, :tags
 
       def initialize(data:, data_type:, message: nil, tlp: nil, tags: nil)
         @data = data

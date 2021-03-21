@@ -6,20 +6,9 @@ require "securerandom"
 module Hachi
   module Models
     class Alert < Base
-      attr_reader :title
-      attr_reader :description
-      attr_reader :severity
-      attr_reader :date
-      attr_reader :tags
-      attr_reader :tlp
-      attr_reader :status
-      attr_reader :type
-      attr_reader :source
-      attr_reader :source_ref
-      attr_reader :artifacts
-      attr_reader :follow
+      attr_reader :title, :description, :severity, :date, :tags, :tlp, :status, :type, :source, :source_ref, :artifacts, :follow
 
-      def initialize(title:, description:, severity: nil, date: nil, tags: nil, tlp: nil, status: nil, type:, source:, source_ref: nil, artifacts: nil, follow: nil)
+      def initialize(title:, description:, type:, source:, severity: nil, date: nil, tags: nil, tlp: nil, status: nil, source_ref: nil, artifacts: nil, follow: nil)
         @title = title
         @description = description
         @severity = severity

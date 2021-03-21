@@ -60,19 +60,19 @@ module Hachi
           tags: tags,
         )
 
-        post("/api/case", kase.payload) { |json| json }
+        post("/api/case", json: kase.payload) { |json| json }
       end
 
       #
       # Find cases
       #
-      # @param [Hash] attributes
+      # @param [Hash] query
       # @param [String] range
       #
       # @return [Hash]
       #
-      def search(range: "all", **attributes)
-        _search("/api/case/_search", attributes: attributes, range: range) { |json| json }
+      def search(query, range: "all")
+        _search("/api/case/_search", query: query, range: range) { |json| json }
       end
 
       #
@@ -138,7 +138,7 @@ module Hachi
           metrics: metrics,
           customFields: custom_fields
         }.compact
-        patch("/api/case/#{id}", attributes) { |json| json }
+        patch("/api/case/#{id}", json: attributes) { |json| json }
       end
     end
   end

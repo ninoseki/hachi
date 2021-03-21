@@ -24,20 +24,21 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '539'
       Date:
-      - Sun, 18 Aug 2019 05:26:45 GMT
+      - Sun, 21 Mar 2021 05:11:54 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '358'
+      - '559'
     body:
       encoding: UTF-8
-      string: '{"owner":"test","severity":2,"_routing":"AWyjMS09loCWo96KV7Ja","flag":false,"customFields":{},"_type":"case","description":"test","title":"test","createdAt":1566106003867,"_parent":null,"createdBy":"test","caseId":10,"tlp":2,"metrics":{},"_id":"AWyjMS09loCWo96KV7Ja","id":"AWyjMS09loCWo96KV7Ja","_version":1,"pap":2,"startDate":1566106004796,"status":"Open"}'
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:26:46 GMT
+      string: '{"_id":"~69776","id":"~69776","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303514094,"updatedAt":null,"_type":"case","caseId":18,"title":"test","description":"test","severity":2,"startDate":1616303514019,"endDate":null,"impactStatus":null,"resolutionStatus":null,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"Open","summary":null,"owner":"test@example.com","customFields":{},"stats":{},"permissions":["manageShare","manageAnalyse","manageTask","manageCase","managePage","manageObservable","manageAlert","accessTheHiveFS","manageAction"]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:54 GMT
 - request:
     method: post
-    uri: http://<API_ENDPOINT>:9000/api/case/AWyjMS09loCWo96KV7Ja/artifact
+    uri: http://<API_ENDPOINT>:9000/api/case/~69776/artifact
     body:
       encoding: UTF-8
       string: '{"data":"example.com","dataType":"domain","message":"test"}'
@@ -59,20 +60,21 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '481'
       Date:
-      - Sun, 18 Aug 2019 05:26:46 GMT
+      - Sun, 21 Mar 2021 05:11:55 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '388'
+      - '267'
     body:
       encoding: UTF-8
-      string: '{"_routing":"AWyjMS09loCWo96KV7Ja","reports":{},"data":"example.com","dataType":"domain","_type":"case_artifact","sighted":false,"message":"test","tags":[],"createdAt":1566106005874,"_parent":"AWyjMS09loCWo96KV7Ja","createdBy":"test","tlp":2,"_id":"c9159b414efb2773de4d6ef89244dbd7","id":"c9159b414efb2773de4d6ef89244dbd7","ioc":false,"_version":1,"startDate":1566106005875,"status":"Ok"}'
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:26:47 GMT
+      string: '[{"_id":"~73872","id":"~73872","createdBy":"test@example.com","createdAt":1616303514645,"_type":"case_artifact","dataType":"domain","data":"example.com","startDate":1616303514645,"tlp":2,"tags":[],"ioc":false,"sighted":false,"message":"test","reports":{},"stats":{}}]'
+  recorded_at: Sun, 21 Mar 2021 05:11:55 GMT
 - request:
     method: get
-    uri: http://<API_ENDPOINT>:9000/api/case/artifact/c9159b414efb2773de4d6ef89244dbd7
+    uri: http://<API_ENDPOINT>:9000/api/case/artifact/~73872
     body:
       encoding: US-ASCII
       string: ''
@@ -92,18 +94,16 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Set-Cookie:
-      - THE-HIVE-XSRF-TOKEN=630b26f2849f208e3809dc07df1613a2e1af685d-1566106006880-7c1acb9a1065d441cca2507e;
-        Path=/
+      Request-Time:
+      - '21'
       Date:
-      - Sun, 18 Aug 2019 05:26:46 GMT
+      - Sun, 21 Mar 2021 05:11:55 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '388'
+      - '265'
     body:
       encoding: UTF-8
-      string: '{"_routing":"AWyjMS09loCWo96KV7Ja","reports":{},"data":"example.com","dataType":"domain","_type":"case_artifact","sighted":false,"message":"test","tags":[],"createdAt":1566106005874,"_parent":"AWyjMS09loCWo96KV7Ja","createdBy":"test","tlp":2,"_id":"c9159b414efb2773de4d6ef89244dbd7","id":"c9159b414efb2773de4d6ef89244dbd7","ioc":false,"_version":1,"startDate":1566106005875,"status":"Ok"}'
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:26:47 GMT
-recorded_with: VCR 5.0.0
+      string: '{"_id":"~73872","id":"~73872","createdBy":"test@example.com","createdAt":1616303514645,"_type":"case_artifact","dataType":"domain","data":"example.com","startDate":1616303514645,"tlp":2,"tags":[],"ioc":false,"sighted":false,"message":"test","reports":{},"stats":{}}'
+  recorded_at: Sun, 21 Mar 2021 05:11:55 GMT
+recorded_with: VCR 6.0.0

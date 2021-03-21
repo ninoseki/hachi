@@ -3,10 +3,7 @@
 module Hachi
   module Models
     class User < Base
-      attr_reader :login
-      attr_reader :name
-      attr_reader :roles
-      attr_reader :password
+      attr_reader :login, :name, :roles, :password
 
       ROLES = %w(read write admin).freeze
 

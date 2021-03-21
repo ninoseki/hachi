@@ -26,10 +26,9 @@ api = Hachi::API.new(api_endpoint: "http://your_api_endpoint", api_key: "yoru_ap
 # list alerts
 api.alert.list
 
-# search atrifacts
-api.artifact.search(data: "1.1.1.1", data_type: "ip")
-# you can do a bulk search by giving an array as an input
-api.artifact.search(data: %w(1.1.1.1 8.8.8.8 github.com))
+# search artifacts
+query = { "_and": [{ "_or": [{ "_field": "data", "_value": "1.1.1.1" }, { "_field": "data", "_value": "example.com" }] }] }
+api.artifact.search(query)
 ```
 
 See `samples` for more.
@@ -41,7 +40,7 @@ See `samples` for more.
 | HTTP Method | URI                               | Action                      | API method                                                                                                                                                          |
 |-------------|-----------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GET         | /api/alert                        | List alerts                 | `#api.alert.list`                                                                                                                                                   |
-| POST        | /api/alert/_search                | Find alerts                 | `#api.alert.search(attributes, range: "all")`                                                                                                                       |
+| POST        | /api/alert/_search                | Find alerts                 | `#api.alert.search(query, range: "all")`                                                                                                                            |
 | PATCH       | /api/alert/_bulk                  | Update alerts in bulk       | N/A                                                                                                                                                                 |
 | POST        | /api/alert/_stats                 | Compute stats on alerts     | N/A                                                                                                                                                                 |
 | POST        | /api/alert                        | Create an alert             | `#api.alert.create(title:, description:, severity: nil, date: nil, tags: nil, tlp: nil, status: nil, type:, source:, source_ref: nil, artifacts: nil, follow: nil)` |
@@ -59,7 +58,7 @@ See `samples` for more.
 
 | HTTP Method | URI                                    | Action                          | API method                                                                            |
 |-------------|----------------------------------------|---------------------------------|---------------------------------------------------------------------------------------|
-| POST        | /api/case/artifact/_search             | Find observables                | `#api.artifact.search(attributes, range: "all")`                                      |
+| POST        | /api/case/artifact/_search             | Find observables                | `#api.artifact.search(query, range: "all")`                                           |
 | POST        | /api/case/artifact/_stats              | Compute stats on observables    | N/A                                                                                   |
 | POST        | /api/case/:caseId/artifact             | Create an observable            | `#api.artifact.create(case_id, data:, data_type:, message: nil, tlp: nil, tags: nil)` |
 | GET         | /api/case/artifact/:artifactId         | Get an observable               | `#api.artifact.get_by_id(id)`                                                         |
@@ -73,7 +72,7 @@ See `samples` for more.
 | HTTP Method | URI                                | Action                                | API method                                                                                                           |
 |-------------|------------------------------------|---------------------------------------|----------------------------------------------------------------------------------------------------------------------|
 | GET         | /api/case                          | List cases                            | `#api.case.list`                                                                                                     |
-| POST        | /api/case/_search                  | Find cases                            | `#api.case.search(attributes, range: "all")`                                                                         |
+| POST        | /api/case/_search                  | Find cases                            | `#api.case.search(query, range: "all")`                                                                              |
 | PATCH       | /api/case/_bulk                    | Update cases in bulk                  | N/A                                                                                                                  |
 | POST        | /api/case/_stats                   | Compute stats on cases                | N/A                                                                                                                  |
 | POST        | /api/case                          | Create a case                         | `#api.case.create(title:, description:, severity: nil, start_date: nil, owner: nil, flag: nil, tlp: nil, tags: nil)` |
@@ -97,6 +96,15 @@ See `samples` for more.
 | PATCH       | /api/user/:userId                 | Update user details | N/A                                                  |
 | POST        | /api/user/:userId/password/set    | Set password        | N/A                                                  |
 | POST        | /api/user/:userId/password/change | Change password     | N/A                                                  |
+
+
+## How to interact with unimplemented API endpoints
+
+`Hachi::API` exposes `get`, `post`, `delete` and `patch` methods. You can interact with the API endpoints via the methods.
+
+```ruby
+alerts = api.get("/api/alert" ) { |json| json }
+```
 
 ## License
 

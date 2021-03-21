@@ -7,12 +7,57 @@ require "uri"
 module Hachi
   module Clients
     class Base
-      attr_reader :api_endpoint
-      attr_reader :api_key
+      attr_reader :api_endpoint, :api_key
 
       def initialize(api_endpoint:, api_key:)
         @api_endpoint = URI(api_endpoint)
         @api_key = api_key
+      end
+
+      def get(path, params: {}, &block)
+        url = url_for(path)
+        url.query = URI.encode_www_form(params) unless params.empty?
+
+        get = Net::HTTP::Get.new(url)
+        get.add_field "Authorization", "Bearer #{api_key}"
+        request(get, &block)
+      end
+
+      def post(path, params: {}, json: {}, &block)
+        url = url_for(path)
+        url.query = URI.encode_www_form(params) unless params.empty?
+
+        post = Net::HTTP::Post.new(url)
+        post.body = json.is_a?(Hash) ? json.to_json : json.to_s
+
+        post.add_field "Content-Type", "application/json"
+        post.add_field "Authorization", "Bearer #{api_key}"
+
+        request(post, &block)
+      end
+
+      def delete(path, params: {}, json: {}, &block)
+        url = url_for(path)
+        url.query = URI.encode_www_form(params) unless params.empty?
+
+        delete = Net::HTTP::Delete.new(url)
+        delete.body = json.is_a?(Hash) ? json.to_json : json.to_s
+
+        delete.add_field "Authorization", "Bearer #{api_key}"
+        request(delete, &block)
+      end
+
+      def patch(path, params: {}, json: {}, &block)
+        url = url_for(path)
+        url.query = URI.encode_www_form(params) unless params.empty?
+
+        patch = Net::HTTP::Patch.new(url)
+        patch.body = json.is_a?(Hash) ? json.to_json : json.to_s
+
+        patch.add_field "Content-Type", "application/json"
+        patch.add_field "Authorization", "Bearer #{api_key}"
+
+        request(patch, &block)
       end
 
       private
@@ -74,48 +119,6 @@ module Hachi
         end
       end
 
-      def get(path, params = {}, &block)
-        url = url_for(path)
-        url.query = URI.encode_www_form(params) unless params.empty?
-
-        get = Net::HTTP::Get.new(url)
-        get.add_field "Authorization", "Bearer #{api_key}"
-        request(get, &block)
-      end
-
-      def post(path, params = {}, &block)
-        url = url_for(path)
-
-        post = Net::HTTP::Post.new(url)
-        post.body = params.is_a?(Hash) ? params.to_json : params.to_s
-
-        post.add_field "Content-Type", "application/json"
-        post.add_field "Authorization", "Bearer #{api_key}"
-
-        request(post, &block)
-      end
-
-      def delete(path, params = {}, &block)
-        url = url_for(path)
-        url.query = URI.encode_www_form(params) unless params.empty?
-
-        delete = Net::HTTP::Delete.new(url)
-        delete.add_field "Authorization", "Bearer #{api_key}"
-        request(delete, &block)
-      end
-
-      def patch(path, params = {}, &block)
-        url = url_for(path)
-
-        patch = Net::HTTP::Patch.new(url)
-        patch.body = params.is_a?(Hash) ? params.to_json : params.to_s
-
-        patch.add_field "Content-Type", "application/json"
-        patch.add_field "Authorization", "Bearer #{api_key}"
-
-        request(patch, &block)
-      end
-
       def validate_range(range)
         return true if range == "all"
         raise ArgumentError, "range should be 'all' or `from-to`" unless range.match?(/(\d+)-(\d+)/)
@@ -126,51 +129,12 @@ module Hachi
         raise ArgumentError, "from should be smaller than to"
       end
 
-      def _search(path, attributes:, range: "all", sort: nil)
+      def _search(path, query:, range: "all", sort: nil)
         validate_range range
-
-        attributes = normalize_attributes(attributes)
-        conditions = attributes.map do |key, value|
-          if key == :data && value.is_a?(Array)
-            { _or: decompose_data(value) }
-          else
-            { _string: "#{key}:\"#{value}\"" }
-          end
-        end
-
-        default_conditions = {
-          _and: [
-            { _not: { status: "Deleted" } },
-            { _not: { _in: { _field: "_type", _values: ["dashboard", "data", "user", "analyzer", "caseTemplate", "reportTemplate", "action"] } } },
-          ],
-        }
-
-        query = {
-          _and: [conditions, default_conditions].flatten,
-        }
 
         query_string = build_query_string(range: range, sort: sort)
 
-        post("#{path}?#{query_string}", query: query) { |json| json }
-      end
-
-      def decompose_data(data)
-        data.map do |elem|
-          { _field: "data", _value: elem }
-        end
-      end
-
-      def normalize_attributes(attributes)
-        h = {}
-        attributes.each do |key, value|
-          h[camelize(key).to_sym] = value
-        end
-        h
-      end
-
-      def camelize(string)
-        head, *others = string.to_s.split("_")
-        [head, others.map(&:capitalize)].flatten.join
+        post("#{path}?#{query_string}", json: { query: query }) { |json| json }
       end
 
       def build_query_string(params)

@@ -25,21 +25,22 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '396'
       Date:
-      - Sun, 15 Sep 2019 02:58:21 GMT
+      - Sun, 21 Mar 2021 05:16:13 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '220'
+      - '258'
     body:
       encoding: UTF-8
-      string: '{"_routing":"georges","createdAt":1568516300359,"hasKey":false,"_parent":null,"createdBy":"test","roles":["read","write"],"name":"Georges
-        Abitbol","_type":"user","_id":"georges","id":"georges","_version":1,"status":"Ok"}'
-    http_version: 
-  recorded_at: Sun, 15 Sep 2019 02:58:21 GMT
+      string: '{"_id":"~94400","id":"georges@thehive.local","createdBy":"test@example.com","createdAt":1616303737925,"_type":"user","login":"georges@thehive.local","name":"Georges
+        Abitbol","roles":["write","read","alert"],"organisation":"test","hasKey":false,"status":"Ok"}'
+  recorded_at: Sun, 21 Mar 2021 05:16:13 GMT
 - request:
     method: get
-    uri: http://<API_ENDPOINT>:9000/api/user/georges
+    uri: http://<API_ENDPOINT>:9000/api/user/~94400
     body:
       encoding: US-ASCII
       string: ''
@@ -59,19 +60,17 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Set-Cookie:
-      - THE-HIVE-XSRF-TOKEN=c422627207ac5f414d099e4a9b526c2d39e628da-1568516301767-016273587365dd223869585e;
-        Path=/
+      Request-Time:
+      - '19'
       Date:
-      - Sun, 15 Sep 2019 02:58:21 GMT
+      - Sun, 21 Mar 2021 05:16:13 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '265'
+      - '258'
     body:
       encoding: UTF-8
-      string: '{"_routing":"georges","hasKey":false,"updatedBy":"test","roles":["read","write"],"_type":"user","createdAt":1568516300359,"_parent":null,"createdBy":"test","name":"Georges
-        Abitbol","_id":"georges","id":"georges","_version":2,"status":"Ok","updatedAt":1568516300724}'
-    http_version: 
-  recorded_at: Sun, 15 Sep 2019 02:58:21 GMT
-recorded_with: VCR 5.0.0
+      string: '{"_id":"~94400","id":"georges@thehive.local","createdBy":"test@example.com","createdAt":1616303737925,"_type":"user","login":"georges@thehive.local","name":"Georges
+        Abitbol","roles":["write","read","alert"],"organisation":"test","hasKey":false,"status":"Ok"}'
+  recorded_at: Sun, 21 Mar 2021 05:16:13 GMT
+recorded_with: VCR 6.0.0

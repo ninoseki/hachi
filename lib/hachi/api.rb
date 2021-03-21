@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
+require 'forwardable'
+
 module Hachi
   class API
+    extend Forwardable
+
     # @return [String] TheHive API endpoint
     attr_reader :api_endpoint
 
@@ -20,7 +24,11 @@ module Hachi
 
       @api_key = api_key
       raise ArgumentError, "api_key argument is required" unless api_key
+
+      @base = Clients::Base.new(api_endpoint: api_endpoint, api_key: api_key)
     end
+
+    def_delegators :@base, :get, :post, :delete, :push
 
     #
     # Alert API endpoint client

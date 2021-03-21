@@ -52,7 +52,7 @@ module Hachi
           password: password
         )
 
-        post("/api/user", user.payload) { |json| json }
+        post("/api/user", json: user.payload) { |json| json }
       end
     end
   end
