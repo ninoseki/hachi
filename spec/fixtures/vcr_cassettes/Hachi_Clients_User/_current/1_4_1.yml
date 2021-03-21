@@ -22,18 +22,18 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Set-Cookie:
-      - THE-HIVE-XSRF-TOKEN=4c69fe20b08985fae42df71aff1fe173071ca0c6-1568516931363-318efd28d1333c2192cdea1e;
-        Path=/
+      Request-Time:
+      - '20'
+      X-Organisation:
+      - "~16528"
       Date:
-      - Sun, 15 Sep 2019 03:08:51 GMT
+      - Sun, 21 Mar 2021 05:16:11 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '277'
+      - '307'
     body:
       encoding: UTF-8
-      string: '{"_routing":"test","hasKey":true,"preferences":{},"updatedBy":"test","roles":["read","write","admin","alert"],"_type":"user","createdAt":1555197946940,"_parent":null,"createdBy":"init","name":"test","_id":"test","id":"test","_version":6,"status":"Ok","updatedAt":1559113148343}'
-    http_version: 
-  recorded_at: Sun, 15 Sep 2019 03:08:51 GMT
-recorded_with: VCR 5.0.0
+      string: '{"_id":"~33000","id":"test@example.com","createdBy":"admin@thehive.local","updatedBy":"admin@thehive.local","createdAt":1616302983877,"updatedAt":1616303730146,"_type":"user","login":"test@example.com","name":"test","roles":["admin","write","read","alert"],"organisation":"test","hasKey":true,"status":"Ok"}'
+  recorded_at: Sun, 21 Mar 2021 05:16:11 GMT
+recorded_with: VCR 6.0.0

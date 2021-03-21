@@ -24,21 +24,22 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '804'
       Date:
-      - Sun, 18 Aug 2019 05:23:25 GMT
+      - Sun, 21 Mar 2021 05:12:03 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '367'
+      - '569'
     body:
       encoding: UTF-8
-      string: '{"owner":"test","severity":2,"_routing":"AWyjLiELloCWo96KV7JJ","flag":false,"customFields":{},"_type":"case","description":"test
-        case","title":"test case","createdAt":1566105804095,"_parent":null,"createdBy":"test","caseId":4,"tlp":2,"metrics":{},"_id":"AWyjLiELloCWo96KV7JJ","id":"AWyjLiELloCWo96KV7JJ","_version":1,"pap":2,"startDate":1566105805064,"status":"Open"}'
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:23:26 GMT
+      string: '{"_id":"~90304","id":"~90304","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303522370,"updatedAt":null,"_type":"case","caseId":26,"title":"test
+        case","description":"test case","severity":2,"startDate":1616303522321,"endDate":null,"impactStatus":null,"resolutionStatus":null,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"Open","summary":null,"owner":"test@example.com","customFields":{},"stats":{},"permissions":["manageShare","manageAnalyse","manageTask","manageCase","managePage","manageObservable","manageAlert","accessTheHiveFS","manageAction"]}'
+  recorded_at: Sun, 21 Mar 2021 05:12:03 GMT
 - request:
     method: get
-    uri: http://<API_ENDPOINT>:9000/api/case/AWyjLiELloCWo96KV7JJ/links
+    uri: http://<API_ENDPOINT>:9000/api/case/~90304/links
     body:
       encoding: US-ASCII
       string: ''
@@ -58,11 +59,10 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Set-Cookie:
-      - THE-HIVE-XSRF-TOKEN=023e97f4eb88343f0b9c31d0dfe4bd23369be405-1566105805178-c3f111493adead99ad1261ee;
-        Path=/
+      Request-Time:
+      - '24'
       Date:
-      - Sun, 18 Aug 2019 05:23:25 GMT
+      - Sun, 21 Mar 2021 05:12:03 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -70,6 +70,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:23:26 GMT
-recorded_with: VCR 5.0.0
+  recorded_at: Sun, 21 Mar 2021 05:12:03 GMT
+recorded_with: VCR 6.0.0

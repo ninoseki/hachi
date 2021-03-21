@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/alert
     body:
       encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","tags":[["N/A"]],"type":"test","source":"test","sourceRef":"ef1b7100b8b456fd5563"}'
+      string: '{"title":"Test Alert","description":"test","tags":[["N/A"]],"type":"test","source":"test","sourceRef":"4946bcf242187ee92d60"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -24,16 +24,17 @@ http_interactions:
       code: 400
       message: Bad Request
     headers:
+      Request-Time:
+      - '18'
       Date:
-      - Sun, 18 Aug 2019 05:20:53 GMT
+      - Sun, 21 Mar 2021 05:11:45 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '277'
+      - '273'
     body:
       encoding: UTF-8
-      string: '{"tableName":"alert","type":"AttributeCheckingError","errors":[{"name":"alert.tags","format":"string","type":"InvalidFormatAttributeError","message":"Invalid
-        format for alert.tags: JsonInputValue([\"N/A\"]), expected string","value":{"type":"JsonInputValue","value":["N/A"]}}]}'
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:20:54 GMT
-recorded_with: VCR 5.0.0
+      string: '{"type":"AttributeCheckingError","message":"[Invalid format for tags[0]:
+        FSeq(List(FString(N/A))), expected string (string)]","errors":[{"name":"tags[0]","format":"string","acceptedInput":["string"],"field":"FSeq(List(FString(N/A)))","type":"InvalidFormatAttributeError"}]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:45 GMT
+recorded_with: VCR 6.0.0

@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/alert
     body:
       encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"9eae93fcbc3af05178c3"}'
+      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"f05dc902f326dc1a1759"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -24,21 +24,22 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '472'
       Date:
-      - Sat, 30 Nov 2019 02:44:52 GMT
+      - Sun, 21 Mar 2021 05:11:44 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '457'
+      - '436'
     body:
       encoding: UTF-8
-      string: '{"date":1575081892449,"severity":2,"_routing":"9539b5ca0538455f9d65ce1a05f76007","customFields":{},"_type":"alert","description":"test","lastSyncDate":1575081892449,"source":"test","type":"test","follow":true,"title":"Test
-        Alert","createdAt":1575081892448,"_parent":null,"createdBy":"test","tlp":2,"_id":"9539b5ca0538455f9d65ce1a05f76007","id":"9539b5ca0538455f9d65ce1a05f76007","sourceRef":"9eae93fcbc3af05178c3","_version":1,"artifacts":[],"status":"New"}'
-    http_version: 
-  recorded_at: Sat, 30 Nov 2019 02:44:52 GMT
+      string: '{"_id":"~57368","id":"~57368","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303504211,"updatedAt":null,"_type":"alert","type":"test","source":"test","sourceRef":"f05dc902f326dc1a1759","externalLink":null,"case":null,"title":"Test
+        Alert","description":"test","severity":2,"date":1616303504207,"tags":[],"tlp":2,"pap":2,"status":"New","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[],"similarCases":[]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:44 GMT
 - request:
     method: patch
-    uri: http://<API_ENDPOINT>:9000/api/alert/9539b5ca0538455f9d65ce1a05f76007
+    uri: http://<API_ENDPOINT>:9000/api/alert/~57368
     body:
       encoding: UTF-8
       string: '{"title":"Updated","description":"Updated"}'
@@ -60,15 +61,16 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Request-Time:
+      - '508'
       Date:
-      - Sat, 30 Nov 2019 02:44:53 GMT
+      - Sun, 21 Mar 2021 05:11:45 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '502'
+      - '436'
     body:
       encoding: UTF-8
-      string: '{"date":1575081892449,"severity":2,"_routing":"9539b5ca0538455f9d65ce1a05f76007","updatedBy":"test","customFields":{},"_type":"alert","description":"Updated","lastSyncDate":1575081892449,"source":"test","type":"test","follow":true,"title":"Updated","createdAt":1575081892448,"_parent":null,"createdBy":"test","tlp":2,"_id":"9539b5ca0538455f9d65ce1a05f76007","id":"9539b5ca0538455f9d65ce1a05f76007","sourceRef":"9eae93fcbc3af05178c3","_version":2,"artifacts":[],"status":"New","updatedAt":1575081892775}'
-    http_version: 
-  recorded_at: Sat, 30 Nov 2019 02:44:53 GMT
-recorded_with: VCR 5.0.0
+      string: '{"_id":"~57368","id":"~57368","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303504211,"updatedAt":null,"_type":"alert","type":"test","source":"test","sourceRef":"f05dc902f326dc1a1759","externalLink":null,"case":null,"title":"Updated","description":"Updated","severity":2,"date":1616303504207,"tags":[],"tlp":2,"pap":2,"status":"New","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[],"similarCases":[]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:45 GMT
+recorded_with: VCR 6.0.0

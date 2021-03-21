@@ -3,14 +3,7 @@
 module Hachi
   module Models
     class Case < Base
-      attr_reader :title
-      attr_reader :description
-      attr_reader :severity
-      attr_reader :start_date
-      attr_reader :owner
-      attr_reader :flag
-      attr_reader :tlp
-      attr_reader :tags
+      attr_reader :title, :description, :severity, :start_date, :owner, :flag, :tlp, :tags
 
       def initialize(title:, description:, severity: nil, start_date: nil, owner: nil, flag: nil, tlp: nil, tags: nil)
         @title = title

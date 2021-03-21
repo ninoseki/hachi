@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/case/artifact/_search?range=all
     body:
       encoding: UTF-8
-      string: '{"query":{"_and":[{"_string":"data:1.1.1.1"},{"_string":"dataType:ip"},{"_and":[{"_not":{"status":"Deleted"}},{"_not":{"_in":{"_field":"_type","_values":["dashboard","data","user","analyzer","caseTemplate","reportTemplate","action"]}}}]}]}}'
+      string: '{"query":{"_and":[{"_or":[{"_field":"data","_value":"1.1.1.1"},{"_field":"data","_value":"example.com"}]}]}}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -25,16 +25,17 @@ http_interactions:
       message: OK
     headers:
       X-Total:
-      - '0'
+      - '7'
+      Request-Time:
+      - '24'
       Date:
-      - Sun, 18 Aug 2019 05:26:40 GMT
+      - Sun, 21 Mar 2021 05:47:12 GMT
       Transfer-Encoding:
       - chunked
       Content-Type:
       - application/json
     body:
       encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:26:41 GMT
-recorded_with: VCR 5.0.0
+      string: '[{"_id":"~20608","id":"~20608","createdBy":"test@example.com","createdAt":1616303084961,"_type":"case_artifact","dataType":"domain","data":"example.com","startDate":1616303084961,"tlp":2,"tags":[],"ioc":false,"sighted":false,"message":"test","reports":{},"stats":{}},{"_id":"~32792","id":"~32792","createdBy":"test@example.com","createdAt":1616303081738,"_type":"case_artifact","dataType":"domain","data":"example.com","startDate":1616303081738,"tlp":2,"tags":[],"ioc":false,"sighted":false,"message":"test","reports":{},"stats":{}},{"_id":"~40984","id":"~40984","createdBy":"test@example.com","createdAt":1616303083983,"_type":"case_artifact","dataType":"domain","data":"example.com","startDate":1616303083983,"tlp":2,"tags":[],"ioc":false,"sighted":false,"message":"test","reports":{},"stats":{}},{"_id":"~61480","id":"~61480","createdBy":"test@example.com","createdAt":1616303273887,"_type":"case_artifact","dataType":"domain","data":"example.com","startDate":1616303273887,"tlp":2,"tags":["test"],"ioc":false,"sighted":false,"message":"","reports":{},"stats":{},"ignoreSimilarity":false},{"_id":"~65680","id":"~65680","createdBy":"test@example.com","createdAt":1616303513503,"_type":"case_artifact","dataType":"domain","data":"example.com","startDate":1616303513503,"tlp":2,"tags":[],"ioc":false,"sighted":false,"message":"test","reports":{},"stats":{}},{"_id":"~73872","id":"~73872","createdBy":"test@example.com","createdAt":1616303514645,"_type":"case_artifact","dataType":"domain","data":"example.com","startDate":1616303514645,"tlp":2,"tags":[],"ioc":false,"sighted":false,"message":"test","reports":{},"stats":{}},{"_id":"~81944","id":"~81944","createdBy":"test@example.com","createdAt":1616303515742,"_type":"case_artifact","dataType":"domain","data":"example.com","startDate":1616303515742,"tlp":2,"tags":[],"ioc":false,"sighted":false,"message":"test","reports":{},"stats":{}}]'
+  recorded_at: Sun, 21 Mar 2021 05:47:12 GMT
+recorded_with: VCR 6.0.0

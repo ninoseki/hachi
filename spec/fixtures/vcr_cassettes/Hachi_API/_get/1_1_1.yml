@@ -23,11 +23,11 @@ http_interactions:
       message: OK
     headers:
       X-Total:
-      - '15'
+      - '16'
       Request-Time:
-      - '61'
+      - '74'
       Date:
-      - Sun, 21 Mar 2021 05:11:49 GMT
+      - Sun, 21 Mar 2021 08:39:39 GMT
       Transfer-Encoding:
       - chunked
       Content-Type:
@@ -43,5 +43,5 @@ http_interactions:
         Alert","description":"test","severity":2,"date":1616303502630,"tags":[],"tlp":2,"pap":2,"status":"Imported","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[],"similarCases":[]},{"_id":"~65728","id":"~65728","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303506750,"updatedAt":null,"_type":"alert","type":"test","source":"test","sourceRef":"86b470b770f61bbb0422","externalLink":null,"case":null,"title":"Test
         Alert","description":"test","severity":2,"date":1616303506748,"tags":[],"tlp":2,"pap":2,"status":"Ignored","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[],"similarCases":[]},{"_id":"~69760","id":"~69760","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303507820,"updatedAt":null,"_type":"alert","type":"test","source":"test","sourceRef":"c447498535469c60a4bd","externalLink":null,"case":null,"title":"Test
         Alert","description":"test","severity":2,"date":1616303507816,"tags":[],"tlp":2,"pap":2,"status":"New","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[],"similarCases":[]}]'
-  recorded_at: Sun, 21 Mar 2021 05:11:49 GMT
+  recorded_at: Sun, 21 Mar 2021 08:39:39 GMT
 recorded_with: VCR 6.0.0

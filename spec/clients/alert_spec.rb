@@ -59,16 +59,16 @@ RSpec.describe Hachi::Clients::Alert, :vcr do
   end
 
   describe "#search" do
-    let(:attributes) { { title: title } }
+    let(:query) { { "_and": [{ "_field": "title", "_value": title }] } }
 
     it do
-      res = api.alert.search(attributes)
+      res = api.alert.search(query)
       expect(res).to be_an(Array)
     end
 
     context "when given sort option" do
       it do
-        alerts = api.alert.search(attributes, sort: "-date")
+        alerts = api.alert.search(query, sort: "-date")
         head = alerts.shift
         alerts.each do |alert|
           expect(head.dig("date").to_i).to be >= alert.dig("date").to_i

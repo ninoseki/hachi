@@ -4,12 +4,14 @@ RSpec.describe Hachi::Clients::Artifact, :vcr do
   let(:api) { Hachi::API.new }
 
   let(:case_id) { api.case.create(title: "test", description: "test")&.dig("_id") }
-  let(:id) { api.artifact.create(case_id, data: "example.com", data_type: "domain", message: "test")&.dig("_id") }
+  let(:id) do
+    api.artifact.create(case_id, data: "example.com", data_type: "domain", message: "test")&.first&.dig("_id")
+  end
 
   describe "#create" do
     it "returns a hash" do
       res = api.artifact.create(case_id, data: "9.9.9.9", data_type: "ip", message: "test")
-      expect(res).to be_a(Hash)
+      expect(res).to be_an(Array)
     end
   end
 
@@ -21,7 +23,7 @@ RSpec.describe Hachi::Clients::Artifact, :vcr do
   end
 
   describe "#delete_by_id" do
-    let(:id_to_delete) { api.artifact.create(case_id, data: "example.com", data_type: "domain", message: "test")&.dig("_id") }
+    let(:id_to_delete) { api.artifact.create(case_id, data: "example.com", data_type: "domain", message: "test")&.first&.dig("_id") }
 
     it "returns an empty string" do
       res = api.artifact.delete_by_id(id_to_delete)
@@ -30,19 +32,14 @@ RSpec.describe Hachi::Clients::Artifact, :vcr do
   end
 
   describe "#search" do
+    let(:query) { { "_and": [{ "_or": [{ "_field": "data", "_value": "1.1.1.1" }, { "_field": "data", "_value": "example.com" }] }] } }
+
     it "return an array" do
-      res = api.artifact.search(data: "1.1.1.1", data_type: "ip")
-      expect(res).to be_an(Array)
-    end
+      results = api.artifact.search(query)
+      values = results.map { |result| result["data"] }
 
-    context "when given an array" do
-      let(:data) { %w(1.1.1.1 8.8.8.8 github.com http://example.com example@gmail.com 44d88612fea8a8f36de82e1278abb02f) }
-
-      it do
-        results = api.artifact.search(data: data)
-        keys = results.map { |result| result.dig("data") }
-        expect(keys.all? { |key| data.include? key }).to be(true)
-      end
+      input_values = %w(1.1.1.1 example.com)
+      expect(values.all? { |v| input_values.include? v }).to be(true)
     end
   end
 

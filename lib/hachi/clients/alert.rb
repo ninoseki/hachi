@@ -55,7 +55,7 @@ module Hachi
       #
       # @return [Hash]
       #
-      def create(title:, description:, severity: nil, date: nil, tags: nil, tlp: nil, status: nil, type:, source:, source_ref: nil, artifacts: nil, follow: nil)
+      def create(title:, description:, type:, source:, severity: nil, date: nil, tags: nil, tlp: nil, status: nil, source_ref: nil, artifacts: nil, follow: nil)
         alert = Models::Alert.new(
           title: title,
           description: description,
@@ -76,14 +76,14 @@ module Hachi
       #
       # Find alerts
       #
-      # @param [Hash] attributes
+      # @param [Hash] query
       # @param [String] range
       # @param [String, nil] sort
       #
       # @return [Array]
       #
-      def search(attributes, range: "all", sort: nil)
-        _search("/api/alert/_search", attributes: attributes, range: range, sort: sort) { |json| json }
+      def search(query, range: "all", sort: nil)
+        _search("/api/alert/_search", query: query, range: range, sort: sort) { |json| json }
       end
 
       #

@@ -25,16 +25,17 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '409'
       Date:
-      - Sun, 15 Sep 2019 02:59:47 GMT
+      - Sun, 21 Mar 2021 05:16:12 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '208'
+      - '250'
     body:
       encoding: UTF-8
-      string: '{"_routing":"foo","createdAt":1568516386149,"hasKey":false,"_parent":null,"createdBy":"test","roles":["read","write"],"name":"Georges
-        Abitbol","_type":"user","_id":"foo","id":"foo","_version":1,"status":"Ok"}'
-    http_version: 
-  recorded_at: Sun, 15 Sep 2019 02:59:47 GMT
-recorded_with: VCR 5.0.0
+      string: '{"_id":"~98432","id":"foo@thehive.local","createdBy":"test@example.com","createdAt":1616303738268,"_type":"user","login":"foo@thehive.local","name":"Georges
+        Abitbol","roles":["write","read","alert"],"organisation":"test","hasKey":false,"status":"Ok"}'
+  recorded_at: Sun, 21 Mar 2021 05:16:12 GMT
+recorded_with: VCR 6.0.0

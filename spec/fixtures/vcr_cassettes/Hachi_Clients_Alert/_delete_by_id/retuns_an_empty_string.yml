@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/alert
     body:
       encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"f2816d65e2be8185ccd2"}'
+      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"1ded1231304d060207cc"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -24,21 +24,22 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '415'
       Date:
-      - Sun, 18 Aug 2019 05:20:51 GMT
+      - Sun, 21 Mar 2021 05:11:49 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '457'
+      - '436'
     body:
       encoding: UTF-8
-      string: '{"severity":2,"date":1566105651323,"_routing":"7e310758f3cc4ce0eca36414fb37811d","customFields":{},"_type":"alert","description":"test","lastSyncDate":1566105651323,"source":"test","type":"test","follow":true,"title":"Test
-        Alert","createdAt":1566105651319,"_parent":null,"createdBy":"test","tlp":2,"_id":"7e310758f3cc4ce0eca36414fb37811d","id":"7e310758f3cc4ce0eca36414fb37811d","sourceRef":"f2816d65e2be8185ccd2","_version":1,"artifacts":[],"status":"New"}'
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:20:52 GMT
+      string: '{"_id":"~53456","id":"~53456","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303509391,"updatedAt":null,"_type":"alert","type":"test","source":"test","sourceRef":"1ded1231304d060207cc","externalLink":null,"case":null,"title":"Test
+        Alert","description":"test","severity":2,"date":1616303509387,"tags":[],"tlp":2,"pap":2,"status":"New","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[],"similarCases":[]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:49 GMT
 - request:
     method: delete
-    uri: http://<API_ENDPOINT>:9000/api/alert/7e310758f3cc4ce0eca36414fb37811d
+    uri: http://<API_ENDPOINT>:9000/api/alert/~53456
     body:
       encoding: US-ASCII
       string: ''
@@ -58,11 +59,12 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Request-Time:
+      - '307'
       Date:
-      - Sun, 18 Aug 2019 05:20:52 GMT
+      - Sun, 21 Mar 2021 05:11:50 GMT
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:20:53 GMT
-recorded_with: VCR 5.0.0
+  recorded_at: Sun, 21 Mar 2021 05:11:50 GMT
+recorded_with: VCR 6.0.0

@@ -66,13 +66,13 @@ module Hachi
       #
       # Find cases
       #
-      # @param [Hash] attributes
+      # @param [Hash] query
       # @param [String] range
       #
       # @return [Hash]
       #
-      def search(range: "all", **attributes)
-        _search("/api/case/_search", attributes: attributes, range: range) { |json| json }
+      def search(query, range: "all")
+        _search("/api/case/_search", query: query, range: range) { |json| json }
       end
 
       #

@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/alert
     body:
       encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"09ceff4083ae4893228b"}'
+      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"497c8847e327851c361f"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -24,18 +24,19 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '424'
       Date:
-      - Sat, 30 Nov 2019 01:47:24 GMT
+      - Sun, 21 Mar 2021 05:11:43 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '457'
+      - '436'
     body:
       encoding: UTF-8
-      string: '{"date":1575078443917,"severity":2,"_routing":"15be1f4753cf16c4bf19ab0ff31567ac","customFields":{},"_type":"alert","description":"test","lastSyncDate":1575078443917,"source":"test","type":"test","follow":true,"title":"Test
-        Alert","createdAt":1575078443915,"_parent":null,"createdBy":"test","tlp":2,"_id":"15be1f4753cf16c4bf19ab0ff31567ac","id":"15be1f4753cf16c4bf19ab0ff31567ac","sourceRef":"09ceff4083ae4893228b","_version":1,"artifacts":[],"status":"New"}'
-    http_version: 
-  recorded_at: Sat, 30 Nov 2019 01:47:25 GMT
+      string: '{"_id":"~65576","id":"~65576","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303502632,"updatedAt":null,"_type":"alert","type":"test","source":"test","sourceRef":"497c8847e327851c361f","externalLink":null,"case":null,"title":"Test
+        Alert","description":"test","severity":2,"date":1616303502630,"tags":[],"tlp":2,"pap":2,"status":"New","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[],"similarCases":[]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:43 GMT
 - request:
     method: post
     uri: http://<API_ENDPOINT>:9000/api/case
@@ -60,24 +61,25 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '449'
       Date:
-      - Sat, 30 Nov 2019 01:47:25 GMT
+      - Sun, 21 Mar 2021 05:11:43 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '364'
+      - '565'
     body:
       encoding: UTF-8
-      string: '{"owner":"test","severity":2,"_routing":"AW65_cCn7fbOoAgpbfqM","flag":false,"customFields":{},"_type":"case","description":"test","title":"Test
-        Alert","createdAt":1575078444256,"_parent":null,"createdBy":"test","caseId":13,"tlp":2,"metrics":{},"_id":"AW65_cCn7fbOoAgpbfqM","id":"AW65_cCn7fbOoAgpbfqM","_version":1,"pap":2,"startDate":1575078445221,"status":"Open"}'
-    http_version: 
-  recorded_at: Sat, 30 Nov 2019 01:47:26 GMT
+      string: '{"_id":"~57472","id":"~57472","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303503112,"updatedAt":null,"_type":"case","caseId":14,"title":"Test
+        Alert","description":"test","severity":2,"startDate":1616303503087,"endDate":null,"impactStatus":null,"resolutionStatus":null,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"Open","summary":null,"owner":"test@example.com","customFields":{},"stats":{},"permissions":["manageShare","manageAnalyse","manageTask","manageCase","managePage","manageObservable","manageAlert","accessTheHiveFS","manageAction"]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:43 GMT
 - request:
     method: post
     uri: http://<API_ENDPOINT>:9000/api/alert/merge/_bulk
     body:
       encoding: UTF-8
-      string: '{"alertIds":["15be1f4753cf16c4bf19ab0ff31567ac"],"caseId":"AW65_cCn7fbOoAgpbfqM"}'
+      string: '{"alertIds":["~65576"],"caseId":"~57472"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -93,19 +95,21 @@ http_interactions:
       - Bearer <API_KEY>
   response:
     status:
-      code: 201
-      message: Created
+      code: 200
+      message: OK
     headers:
+      Request-Time:
+      - '631'
       Date:
-      - Sat, 30 Nov 2019 01:47:26 GMT
+      - Sun, 21 Mar 2021 05:11:44 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '364'
+      - '634'
     body:
       encoding: UTF-8
-      string: '{"owner":"test","severity":2,"_routing":"AW65_cCn7fbOoAgpbfqM","flag":false,"customFields":{},"_type":"case","description":"test","title":"Test
-        Alert","createdAt":1575078444256,"_parent":null,"createdBy":"test","caseId":13,"tlp":2,"metrics":{},"_id":"AW65_cCn7fbOoAgpbfqM","id":"AW65_cCn7fbOoAgpbfqM","_version":1,"pap":2,"startDate":1575078445221,"status":"Open"}'
-    http_version: 
-  recorded_at: Sat, 30 Nov 2019 01:47:27 GMT
-recorded_with: VCR 5.0.0
+      string: '{"_id":"~57472","id":"~57472","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303503112,"updatedAt":null,"_type":"case","caseId":14,"title":"Test
+        Alert","description":"test\n  \n#### Merged with alert #497c8847e327851c361f
+        Test Alert\n\ntest","severity":2,"startDate":1616303503087,"endDate":null,"impactStatus":null,"resolutionStatus":null,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"Open","summary":null,"owner":"test@example.com","customFields":{},"stats":{},"permissions":["manageShare","manageAnalyse","manageTask","manageCase","managePage","manageObservable","manageAlert","accessTheHiveFS","manageAction"]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:44 GMT
+recorded_with: VCR 6.0.0

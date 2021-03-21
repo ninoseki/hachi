@@ -38,8 +38,10 @@ RSpec.describe Hachi::Clients::Case, :vcr do
   end
 
   describe "#search" do
+    let(:query) { { "_and": [{ "_field": "title", "_value": title }] } }
+
     it "returns an array" do
-      res = api.case.search(title: title)
+      res = api.case.search(query)
       expect(res).to be_an(Array)
     end
   end

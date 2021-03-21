@@ -5,7 +5,7 @@ http_interactions:
     uri: http://<API_ENDPOINT>:9000/api/alert
     body:
       encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"446d30201dfc72a510aa"}'
+      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"48caa8071e2151a5a7a4"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -24,16 +24,17 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Request-Time:
+      - '491'
       Date:
-      - Sun, 18 Aug 2019 05:20:53 GMT
+      - Sun, 21 Mar 2021 05:11:45 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '457'
+      - '436'
     body:
       encoding: UTF-8
-      string: '{"date":1566105652653,"severity":2,"_routing":"0438615f87b8a1d62f5019c27154c6bc","customFields":{},"_type":"alert","description":"test","lastSyncDate":1566105652653,"source":"test","type":"test","follow":true,"title":"Test
-        Alert","createdAt":1566105652651,"_parent":null,"createdBy":"test","tlp":2,"_id":"0438615f87b8a1d62f5019c27154c6bc","id":"0438615f87b8a1d62f5019c27154c6bc","sourceRef":"446d30201dfc72a510aa","_version":1,"artifacts":[],"status":"New"}'
-    http_version: 
-  recorded_at: Sun, 18 Aug 2019 05:20:54 GMT
-recorded_with: VCR 5.0.0
+      string: '{"_id":"~82032","id":"~82032","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303505346,"updatedAt":null,"_type":"alert","type":"test","source":"test","sourceRef":"48caa8071e2151a5a7a4","externalLink":null,"case":null,"title":"Test
+        Alert","description":"test","severity":2,"date":1616303505341,"tags":[],"tlp":2,"pap":2,"status":"New","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[],"similarCases":[]}'
+  recorded_at: Sun, 21 Mar 2021 05:11:45 GMT
+recorded_with: VCR 6.0.0
