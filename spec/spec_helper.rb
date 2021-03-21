@@ -26,13 +26,20 @@ RSpec.configure do |config|
   end
 end
 
+API_KEY_NAME = "THEHIVE_API_KEY"
+API_ENDPOINT_KEY_NAME = "THEHIVE_API_ENDPOINT"
+
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.configure_rspec_metadata!
   config.hook_into :webmock
   config.ignore_localhost = false
 
-  config.filter_sensitive_data("<API_KEY>") { ENV["THEHIVE_API_KEY"] }
-  uri = URI(ENV["THEHIVE_API_ENDPOINT"])
+  ENV[API_KEY_NAME] = "dummy" unless ENV.key?(API_KEY_NAME)
+  config.filter_sensitive_data("<API_KEY>") { ENV[API_KEY_NAME] }
+
+  ENV[API_ENDPOINT_KEY_NAME] = "http://dummy.example.com:9000" unless ENV.key?(API_ENDPOINT_KEY_NAME)
+
+  uri = URI(ENV[API_ENDPOINT_KEY_NAME])
   config.filter_sensitive_data("<API_ENDPOINT>") { uri.hostname }
 end
