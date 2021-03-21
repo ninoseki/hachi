@@ -100,7 +100,7 @@ See `samples` for more.
 
 ## How to interact with unimplemented API endpoints
 
-`Hachi::API` exposes `get`, `post`, `delete` and `patch` methods. You can interact with the API via the methods.
+`Hachi::API` exposes `get`, `post`, `delete` and `patch` methods. You can interact with the API endpoints via the methods.
 
 ```ruby
 alerts = api.get("/api/alert" ) { |json| json }

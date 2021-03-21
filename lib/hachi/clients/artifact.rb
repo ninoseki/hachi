@@ -24,7 +24,7 @@ module Hachi
           tags: tags,
         )
 
-        post("/api/case/#{case_id}/artifact", artifact.payload) { |json| json }
+        post("/api/case/#{case_id}/artifact", json: artifact.payload) { |json| json }
       end
 
       #

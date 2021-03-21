@@ -60,7 +60,7 @@ module Hachi
           tags: tags,
         )
 
-        post("/api/case", kase.payload) { |json| json }
+        post("/api/case", json: kase.payload) { |json| json }
       end
 
       #
@@ -138,7 +138,7 @@ module Hachi
           metrics: metrics,
           customFields: custom_fields
         }.compact
-        patch("/api/case/#{id}", attributes) { |json| json }
+        patch("/api/case/#{id}", json: attributes) { |json| json }
       end
     end
   end

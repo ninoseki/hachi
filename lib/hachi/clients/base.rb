@@ -14,7 +14,7 @@ module Hachi
         @api_key = api_key
       end
 
-      def get(path, params = {}, &block)
+      def get(path, params: {}, &block)
         url = url_for(path)
         url.query = URI.encode_www_form(params) unless params.empty?
 
@@ -23,11 +23,12 @@ module Hachi
         request(get, &block)
       end
 
-      def post(path, params = {}, &block)
+      def post(path, params: {}, json: {}, &block)
         url = url_for(path)
+        url.query = URI.encode_www_form(params) unless params.empty?
 
         post = Net::HTTP::Post.new(url)
-        post.body = params.is_a?(Hash) ? params.to_json : params.to_s
+        post.body = json.is_a?(Hash) ? json.to_json : json.to_s
 
         post.add_field "Content-Type", "application/json"
         post.add_field "Authorization", "Bearer #{api_key}"
@@ -35,20 +36,23 @@ module Hachi
         request(post, &block)
       end
 
-      def delete(path, params = {}, &block)
+      def delete(path, params: {}, json: {}, &block)
         url = url_for(path)
         url.query = URI.encode_www_form(params) unless params.empty?
 
         delete = Net::HTTP::Delete.new(url)
+        delete.body = json.is_a?(Hash) ? json.to_json : json.to_s
+
         delete.add_field "Authorization", "Bearer #{api_key}"
         request(delete, &block)
       end
 
-      def patch(path, params = {}, &block)
+      def patch(path, params: {}, json: {}, &block)
         url = url_for(path)
+        url.query = URI.encode_www_form(params) unless params.empty?
 
         patch = Net::HTTP::Patch.new(url)
-        patch.body = params.is_a?(Hash) ? params.to_json : params.to_s
+        patch.body = json.is_a?(Hash) ? json.to_json : json.to_s
 
         patch.add_field "Content-Type", "application/json"
         patch.add_field "Authorization", "Bearer #{api_key}"
@@ -130,7 +134,7 @@ module Hachi
 
         query_string = build_query_string(range: range, sort: sort)
 
-        post("#{path}?#{query_string}", query: query) { |json| json }
+        post("#{path}?#{query_string}", json: { query: query }) { |json| json }
       end
 
       def build_query_string(params)

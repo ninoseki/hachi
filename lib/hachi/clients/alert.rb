@@ -70,7 +70,7 @@ module Hachi
           artifacts: artifacts,
           follow: follow,
         )
-        post("/api/alert", alert.payload) { |json| json }
+        post("/api/alert", json: alert.payload) { |json| json }
       end
 
       #
@@ -132,7 +132,7 @@ module Hachi
           alertIds: ids.flatten,
           caseId: case_id
         }
-        post("/api/alert/merge/_bulk", params) { |json| json }
+        post("/api/alert/merge/_bulk", json: params) { |json| json }
       end
 
       #
@@ -157,7 +157,7 @@ module Hachi
           tlp: tlp,
           artifacts: artifacts,
         }.compact
-        patch("/api/alert/#{id}", attributes) { |json| json }
+        patch("/api/alert/#{id}", json: attributes) { |json| json }
       end
     end
   end
