@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.3"
   spec.add_development_dependency "coveralls_reborn", "~> 0.24"
+  spec.add_development_dependency "dotenv", "~> 2.7"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.11"
   spec.add_development_dependency "simplecov-lcov", "~> 0.8.0"

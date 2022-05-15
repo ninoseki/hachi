@@ -1,0 +1,73 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: http://<API_ENDPOINT>:9000/api/v1/query
+      body:
+        encoding: UTF-8
+        string: '{"query":[{"_name":"listObservable"}]}'
+      headers:
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+        Host:
+          - "<API_ENDPOINT>:9000"
+        Content-Type:
+          - application/json
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Trace-Id:
+          - 5ebe23430b884b04
+        Request-Time:
+          - "806"
+        Date:
+          - Sun, 15 May 2022 03:03:14 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "553"
+      body:
+        encoding: UTF-8
+        string: '[{"_id":"~7606472","_type":"Observable","_createdBy":"test@example.com","_createdAt":1652572283382,"dataType":"url","data":"http://example.org","startDate":1652572283382,"tlp":2,"pap":2,"tags":[],"ioc":false,"sighted":false,"reports":{},"extraData":{},"ignoreSimilarity":false},{"_id":"~3715168","_type":"Observable","_createdBy":"test@example.com","_createdAt":1652572283402,"dataType":"mail","data":"foo@example.org","startDate":1652572283402,"tlp":2,"pap":2,"tags":[],"ioc":false,"sighted":false,"reports":{},"extraData":{},"ignoreSimilarity":false}]'
+    recorded_at: Sun, 15 May 2022 03:03:14 GMT
+  - request:
+      method: get
+      uri: http://<API_ENDPOINT>:9000/api/v1/observable/~7606472
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+        Host:
+          - "<API_ENDPOINT>:9000"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Trace-Id:
+          - 1b0bd3d521d914a1
+        Request-Time:
+          - "99"
+        Date:
+          - Sun, 15 May 2022 03:03:14 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "276"
+      body:
+        encoding: UTF-8
+        string: '{"_id":"~7606472","_type":"Observable","_createdBy":"test@example.com","_createdAt":1652572283382,"dataType":"url","data":"http://example.org","startDate":1652572283382,"tlp":2,"pap":2,"tags":[],"ioc":false,"sighted":false,"reports":{},"extraData":{},"ignoreSimilarity":false}'
+    recorded_at: Sun, 15 May 2022 03:03:14 GMT
+recorded_with: VCR 6.1.0

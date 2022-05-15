@@ -9,7 +9,7 @@ module Hachi
       # @return [Hash]
       #
       def current
-        get("/api/user/current") { |json| json }
+        get("/user/current") { |json| json }
       end
 
       #
@@ -20,7 +20,7 @@ module Hachi
       # @return [Hash]
       #
       def get_by_id(id)
-        get("/api/user/#{id}") { |json| json }
+        get("/user/#{id}") { |json| json }
       end
 
       #
@@ -31,28 +31,18 @@ module Hachi
       # @return [String]
       #
       def delete_by_id(id)
-        delete("/api/user/#{id}") { |json| json }
+        delete("/user/#{id}") { |json| json }
       end
 
       #
       # Create a user
       #
-      # @param [String] login
-      # @param [String] name
-      # @param [Array<String>] roles
-      # @param [String] password
+      # @param [Hash] payload
       #
       # @return [Hash]
       #
-      def create(login:, name:, roles:, password:)
-        user = Models::User.new(
-          login: login,
-          name: name,
-          roles: roles,
-          password: password
-        )
-
-        post("/api/user", json: user.payload) { |json| json }
+      def create(**payload)
+        post("/user", json: payload) { |json| json }
       end
     end
   end

@@ -7,11 +7,21 @@ require "uri"
 module Hachi
   module Clients
     class Base
-      attr_reader :api_endpoint, :api_key
+      # @return [String]
+      attr_reader :api_endpoint
 
-      def initialize(api_endpoint:, api_key:)
+      # @return [String]
+      attr_reader :api_key
+
+      # @return [String, nil]
+      attr_reader :api_version
+
+      include Hachi::Awrence::Methods
+
+      def initialize(api_endpoint:, api_key:, api_version:)
         @api_endpoint = URI(api_endpoint)
         @api_key = api_key
+        @api_version = api_version
       end
 
       def get(path, params: {}, &block)
@@ -27,6 +37,8 @@ module Hachi
         url = url_for(path)
         url.query = URI.encode_www_form(params) unless params.empty?
 
+        json = to_camelback_keys(json.compact) if json.is_a?(Hash)
+
         post = Net::HTTP::Post.new(url)
         post.body = json.is_a?(Hash) ? json.to_json : json.to_s
 
@@ -40,6 +52,8 @@ module Hachi
         url = url_for(path)
         url.query = URI.encode_www_form(params) unless params.empty?
 
+        json = to_camelback_keys(json.compact) if json.is_a?(Hash)
+
         delete = Net::HTTP::Delete.new(url)
         delete.body = json.is_a?(Hash) ? json.to_json : json.to_s
 
@@ -50,6 +64,8 @@ module Hachi
       def patch(path, params: {}, json: {}, &block)
         url = url_for(path)
         url.query = URI.encode_www_form(params) unless params.empty?
+
+        json = to_camelback_keys(json.compact) if json.is_a?(Hash)
 
         patch = Net::HTTP::Patch.new(url)
         patch.body = json.is_a?(Hash) ? json.to_json : json.to_s
@@ -63,7 +79,11 @@ module Hachi
       private
 
       def base_url
-        "#{api_endpoint.scheme}://#{api_endpoint.hostname}:#{api_endpoint.port}"
+        if api_version.nil? || api_version.to_s.empty?
+          "#{api_endpoint.scheme}://#{api_endpoint.hostname}:#{api_endpoint.port}/api"
+        else
+          "#{api_endpoint.scheme}://#{api_endpoint.hostname}:#{api_endpoint.port}/api/#{api_version}"
+        end
       end
 
       def url_for(path)
@@ -73,13 +93,13 @@ module Hachi
       def https_options
         return nil if api_endpoint.scheme != "https"
 
-        if proxy = ENV["HTTPS_PROXY"] || ENV["https_proxy"]
+        if proxy = ENV.fetch("HTTPS_PROXY") { ENV.fetch("https_proxy", nil) }
           uri = URI(proxy)
           {
             proxy_address: uri.hostname,
             proxy_port: uri.port,
             proxy_from_env: false,
-            use_ssl: true,
+            use_ssl: true
           }
         else
           { use_ssl: true }
@@ -87,12 +107,12 @@ module Hachi
       end
 
       def http_options
-        if proxy = ENV["HTTP_PROXY"] || ENV["http_proxy"]
+        if proxy = ENV.fetch("HTTP_PROXY") { ENV.fetch("http_proxy", nil) }
           uri = URI(proxy)
           {
             proxy_address: uri.hostname,
             proxy_port: uri.port,
-            proxy_from_env: false,
+            proxy_from_env: false
           }
         else
           {}
@@ -119,26 +139,8 @@ module Hachi
         end
       end
 
-      def validate_range(range)
-        return true if range == "all"
-        raise ArgumentError, "range should be 'all' or `from-to`" unless range.match?(/(\d+)-(\d+)/)
-
-        from, to = range.split("-").map(&:to_i)
-        return true if from < to
-
-        raise ArgumentError, "from should be smaller than to"
-      end
-
-      def _search(path, query:, range: "all", sort: nil)
-        validate_range range
-
-        query_string = build_query_string(range: range, sort: sort)
-
-        post("#{path}?#{query_string}", json: { query: query }) { |json| json }
-      end
-
       def build_query_string(params)
-        URI.encode_www_form(params.reject { |_k, v| v.nil? })
+        URI.encode_www_form(params.compact)
       end
     end
   end

@@ -6,7 +6,7 @@ http_interactions:
       body:
         encoding: UTF-8
         string:
-          '{"type":"test","source":"delete","sourceRef":"1","title":"Test to delete","description":"alert
+          '{"type":"test","source":"update","sourceRef":"1","title":"Test to post","description":"alert
           description","observables":[{"dataType":"url","data":"http://example.org"},{"dataType":"mail","data":"foo@example.org"}]}'
       headers:
         Accept-Encoding:
@@ -25,27 +25,27 @@ http_interactions:
         message: Created
       headers:
         Trace-Id:
-          - c28ed463a8948a16
+          - dccdfde29c34cec9
         Request-Time:
-          - "580"
+          - "1055"
         Date:
-          - Sat, 14 May 2022 23:49:56 GMT
+          - Sat, 14 May 2022 23:51:24 GMT
         Content-Type:
           - application/json
         Content-Length:
-          - "456"
+          - "454"
       body:
         encoding: UTF-8
         string:
-          '{"_id":"~3870872","_type":"Alert","_createdBy":"test@example.com","_updatedBy":"test@example.com","_createdAt":1652572196457,"_updatedAt":1652572196573,"type":"test","source":"delete","sourceRef":"1","title":"Test
-          to delete","description":"alert description","severity":2,"date":1652572196409,"tags":[],"tlp":2,"pap":2,"follow":true,"customFields":[],"observableCount":2,"status":"New","stage":"New","extraData":{},"newDate":1652572196416,"timeToDetect":0}'
-    recorded_at: Sat, 14 May 2022 23:49:56 GMT
+          '{"_id":"~3711072","_type":"Alert","_createdBy":"test@example.com","_updatedBy":"test@example.com","_createdAt":1652572283358,"_updatedAt":1652572283405,"type":"test","source":"update","sourceRef":"1","title":"Test
+          to post","description":"alert description","severity":2,"date":1652572283338,"tags":[],"tlp":2,"pap":2,"follow":true,"customFields":[],"observableCount":2,"status":"New","stage":"New","extraData":{},"newDate":1652572283341,"timeToDetect":0}'
+    recorded_at: Sat, 14 May 2022 23:51:24 GMT
   - request:
-      method: delete
-      uri: http://<API_ENDPOINT>:9000/api/v1/alert/~3870872
+      method: patch
+      uri: http://<API_ENDPOINT>:9000/api/v1/alert/~3711072
       body:
         encoding: UTF-8
-        string: "{}"
+        string: '{"title":"Updated","description":"Updated"}'
       headers:
         Accept-Encoding:
           - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -55,19 +55,21 @@ http_interactions:
           - Ruby
         Host:
           - "<API_ENDPOINT>:9000"
+        Content-Type:
+          - application/json
     response:
       status:
         code: 204
         message: No Content
       headers:
         Trace-Id:
-          - 478b10d40601cf57
+          - 12af93821d425c05
         Request-Time:
-          - "1022"
+          - "1075"
         Date:
-          - Sat, 14 May 2022 23:49:57 GMT
+          - Sat, 14 May 2022 23:51:25 GMT
       body:
         encoding: UTF-8
         string: ""
-    recorded_at: Sat, 14 May 2022 23:49:58 GMT
+    recorded_at: Sat, 14 May 2022 23:51:25 GMT
 recorded_with: VCR 6.1.0

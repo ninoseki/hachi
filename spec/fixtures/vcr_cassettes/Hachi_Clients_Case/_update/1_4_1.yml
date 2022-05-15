@@ -23,11 +23,11 @@ http_interactions:
         message: Created
       headers:
         Trace-Id:
-          - 52a90dd5179b2af5
+          - 1e74f8102092223d
         Request-Time:
-          - "971"
+          - "2326"
         Date:
-          - Sat, 14 May 2022 23:52:00 GMT
+          - Sat, 14 May 2022 23:51:56 GMT
         Content-Type:
           - application/json
         Content-Length:
@@ -35,15 +35,15 @@ http_interactions:
       body:
         encoding: UTF-8
         string:
-          '{"_id":"~3751984","_type":"Case","_createdBy":"test@example.com","_createdAt":1652572319800,"number":4,"title":"test
-          case","description":"test case","severity":2,"startDate":1652572319778,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"New","stage":"New","assignee":"test@example.com","customFields":[],"userPermissions":["manageTask","manageComment","manageProcedure","managePage","manageObservable","manageAlert","accessTheHiveFS","manageKnowledgeBase","manageAction","manageShare","manageAnalyse","manageCustomEvent","manageCase"],"extraData":{},"newDate":1652572319778,"timeToDetect":0}'
-    recorded_at: Sat, 14 May 2022 23:52:00 GMT
+          '{"_id":"~3874960","_type":"Case","_createdBy":"test@example.com","_createdAt":1652572315596,"number":1,"title":"test
+          case","description":"test case","severity":2,"startDate":1652572314226,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"New","stage":"New","assignee":"test@example.com","customFields":[],"userPermissions":["manageTask","manageComment","manageProcedure","managePage","manageObservable","manageAlert","accessTheHiveFS","manageKnowledgeBase","manageAction","manageShare","manageAnalyse","manageCustomEvent","manageCase"],"extraData":{},"newDate":1652572314230,"timeToDetect":0}'
+    recorded_at: Sat, 14 May 2022 23:51:56 GMT
   - request:
-      method: delete
-      uri: http://<API_ENDPOINT>:9000/api/v1/case/~3751984
+      method: patch
+      uri: http://<API_ENDPOINT>:9000/api/v1/case/~3874960
       body:
         encoding: UTF-8
-        string: "{}"
+        string: '{"title":"Update","description":"Update"}'
       headers:
         Accept-Encoding:
           - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -53,19 +53,21 @@ http_interactions:
           - Ruby
         Host:
           - "<API_ENDPOINT>:9000"
+        Content-Type:
+          - application/json
     response:
       status:
         code: 204
         message: No Content
       headers:
         Trace-Id:
-          - 96fd3a365b606263
+          - a2a1fcbd655e3bbe
         Request-Time:
-          - "992"
+          - "1044"
         Date:
-          - Sat, 14 May 2022 23:52:01 GMT
+          - Sat, 14 May 2022 23:51:57 GMT
       body:
         encoding: UTF-8
         string: ""
-    recorded_at: Sat, 14 May 2022 23:52:01 GMT
+    recorded_at: Sat, 14 May 2022 23:51:57 GMT
 recorded_with: VCR 6.1.0

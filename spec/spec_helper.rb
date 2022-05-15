@@ -42,8 +42,8 @@ SimpleCov.start do
 end
 
 require "coveralls"
-
 require "vcr"
+require "dotenv/load"
 
 require "hachi"
 

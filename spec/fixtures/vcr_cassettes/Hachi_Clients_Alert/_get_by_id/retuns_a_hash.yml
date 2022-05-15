@@ -1,75 +1,79 @@
 ---
 http_interactions:
-- request:
-    method: post
-    uri: http://<API_ENDPOINT>:9000/api/alert
-    body:
-      encoding: UTF-8
-      string: '{"title":"Test Alert","description":"test","type":"test","source":"test","sourceRef":"40cd0f1641b8a6acd36f"}'
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - "<API_ENDPOINT>:9000"
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <API_KEY>
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Request-Time:
-      - '447'
-      Date:
-      - Sun, 21 Mar 2021 05:11:49 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '436'
-    body:
-      encoding: UTF-8
-      string: '{"_id":"~77952","id":"~77952","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303508768,"updatedAt":null,"_type":"alert","type":"test","source":"test","sourceRef":"40cd0f1641b8a6acd36f","externalLink":null,"case":null,"title":"Test
-        Alert","description":"test","severity":2,"date":1616303508765,"tags":[],"tlp":2,"pap":2,"status":"New","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[],"similarCases":[]}'
-  recorded_at: Sun, 21 Mar 2021 05:11:49 GMT
-- request:
-    method: get
-    uri: http://<API_ENDPOINT>:9000/api/alert/~77952
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - "<API_ENDPOINT>:9000"
-      Authorization:
-      - Bearer <API_KEY>
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Request-Time:
-      - '12'
-      Date:
-      - Sun, 21 Mar 2021 05:11:49 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '436'
-    body:
-      encoding: UTF-8
-      string: '{"_id":"~77952","id":"~77952","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303508768,"updatedAt":null,"_type":"alert","type":"test","source":"test","sourceRef":"40cd0f1641b8a6acd36f","externalLink":null,"case":null,"title":"Test
-        Alert","description":"test","severity":2,"date":1616303508765,"tags":[],"tlp":2,"pap":2,"status":"New","follow":true,"customFields":{},"caseTemplate":null,"artifacts":[],"similarCases":[]}'
-  recorded_at: Sun, 21 Mar 2021 05:11:49 GMT
-recorded_with: VCR 6.0.0
+  - request:
+      method: post
+      uri: http://<API_ENDPOINT>:9000/api/v1/alert
+      body:
+        encoding: UTF-8
+        string:
+          '{"type":"test","source":"test","sourceRef":"1","title":"alert title","description":"alert
+          description","observables":[{"dataType":"url","data":"http://example.org"},{"dataType":"mail","data":"foo@example.org"}]}'
+      headers:
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+        Host:
+          - "<API_ENDPOINT>:9000"
+        Content-Type:
+          - application/json
+    response:
+      status:
+        code: 201
+        message: Created
+      headers:
+        Trace-Id:
+          - 809ad500d62f7e25
+        Request-Time:
+          - "897"
+        Date:
+          - Sat, 14 May 2022 23:49:58 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "451"
+      body:
+        encoding: UTF-8
+        string:
+          '{"_id":"~7594184","_type":"Alert","_createdBy":"test@example.com","_updatedBy":"test@example.com","_createdAt":1652572198291,"_updatedAt":1652572198355,"type":"test","source":"test","sourceRef":"1","title":"alert
+          title","description":"alert description","severity":2,"date":1652572198258,"tags":[],"tlp":2,"pap":2,"follow":true,"customFields":[],"observableCount":2,"status":"New","stage":"New","extraData":{},"newDate":1652572198263,"timeToDetect":0}'
+    recorded_at: Sat, 14 May 2022 23:49:59 GMT
+  - request:
+      method: get
+      uri: http://<API_ENDPOINT>:9000/api/v1/alert/~7594184
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+        Host:
+          - "<API_ENDPOINT>:9000"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Trace-Id:
+          - 815b19c8d08a1388
+        Request-Time:
+          - "80"
+        Date:
+          - Sat, 14 May 2022 23:49:58 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "451"
+      body:
+        encoding: UTF-8
+        string:
+          '{"_id":"~7594184","_type":"Alert","_createdBy":"test@example.com","_updatedBy":"test@example.com","_createdAt":1652572198291,"_updatedAt":1652572198355,"type":"test","source":"test","sourceRef":"1","title":"alert
+          title","description":"alert description","severity":2,"date":1652572198258,"tags":[],"tlp":2,"pap":2,"follow":true,"customFields":[],"observableCount":2,"status":"New","stage":"New","extraData":{},"newDate":1652572198263,"timeToDetect":0}'
+    recorded_at: Sat, 14 May 2022 23:49:59 GMT
+recorded_with: VCR 6.1.0
