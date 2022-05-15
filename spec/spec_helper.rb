@@ -61,6 +61,7 @@ end
 
 API_KEY_NAME = "THEHIVE_API_KEY"
 API_ENDPOINT_KEY_NAME = "THEHIVE_API_ENDPOINT"
+API_VERSION_KEY_NAME = "THEHIVE_API_VERSION"
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
@@ -68,11 +69,16 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.ignore_localhost = false
 
-  ENV[API_KEY_NAME] = "dummy" unless ENV.key?(API_KEY_NAME)
+  # set dummy API key
+  ENV[API_KEY_NAME] = ENV.fetch(API_KEY_NAME, "dummy")
   config.filter_sensitive_data("<API_KEY>") { ENV.fetch(API_KEY_NAME, nil) }
 
-  ENV[API_ENDPOINT_KEY_NAME] = "http://dummy.example.com:9000" unless ENV.key?(API_ENDPOINT_KEY_NAME)
+  # set dummy API endoint
+  ENV[API_ENDPOINT_KEY_NAME] = ENV.fetch(API_ENDPOINT_KEY_NAME, "http://dummy.example.com:9000")
 
   uri = URI(ENV.fetch(API_ENDPOINT_KEY_NAME, nil))
   config.filter_sensitive_data("<API_ENDPOINT>") { uri.hostname }
+
+  # set dummy API version
+  ENV[API_VERSION_KEY_NAME] = ENV.fetch(API_VERSION_KEY_NAME, "v1")
 end
