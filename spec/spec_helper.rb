@@ -21,7 +21,7 @@ def setup_formatter
   end
 
   SimpleCov.formatter =
-    if ENV["CI"] || ENV["COVERALLS_REPO_TOKEN"]
+    if ENV.fetch("CI") { ENV.fetch("COVERALLS_REPO_TOKEN", nil) }
       if ENV["GITHUB_ACTIONS"]
         SimpleCov::Formatter::MultiFormatter.new([InceptionFormatter, SimpleCov::Formatter::LcovFormatter])
       else
@@ -42,8 +42,8 @@ SimpleCov.start do
 end
 
 require "coveralls"
+
 require "vcr"
-require "dotenv/load"
 
 require "hachi"
 
@@ -69,10 +69,10 @@ VCR.configure do |config|
   config.ignore_localhost = false
 
   ENV[API_KEY_NAME] = "dummy" unless ENV.key?(API_KEY_NAME)
-  config.filter_sensitive_data("<API_KEY>") { ENV[API_KEY_NAME] }
+  config.filter_sensitive_data("<API_KEY>") { ENV.fetch(API_KEY_NAME, nil) }
 
   ENV[API_ENDPOINT_KEY_NAME] = "http://dummy.example.com:9000" unless ENV.key?(API_ENDPOINT_KEY_NAME)
 
-  uri = URI(ENV[API_ENDPOINT_KEY_NAME])
+  uri = URI(ENV.fetch(API_ENDPOINT_KEY_NAME, nil))
   config.filter_sensitive_data("<API_ENDPOINT>") { uri.hostname }
 end
