@@ -1,75 +1,77 @@
 ---
 http_interactions:
-- request:
-    method: post
-    uri: http://<API_ENDPOINT>:9000/api/case
-    body:
-      encoding: UTF-8
-      string: '{"title":"test case","description":"test case"}'
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - "<API_ENDPOINT>:9000"
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <API_KEY>
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Request-Time:
-      - '560'
-      Date:
-      - Sun, 21 Mar 2021 05:11:57 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '569'
-    body:
-      encoding: UTF-8
-      string: '{"_id":"~90152","id":"~90152","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303516643,"updatedAt":null,"_type":"case","caseId":20,"title":"test
-        case","description":"test case","severity":2,"startDate":1616303516571,"endDate":null,"impactStatus":null,"resolutionStatus":null,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"Open","summary":null,"owner":"test@example.com","customFields":{},"stats":{},"permissions":["manageShare","manageAnalyse","manageTask","manageCase","managePage","manageObservable","manageAlert","accessTheHiveFS","manageAction"]}'
-  recorded_at: Sun, 21 Mar 2021 05:11:57 GMT
-- request:
-    method: get
-    uri: http://<API_ENDPOINT>:9000/api/case/~90152
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - "<API_ENDPOINT>:9000"
-      Authorization:
-      - Bearer <API_KEY>
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Request-Time:
-      - '20'
-      Date:
-      - Sun, 21 Mar 2021 05:11:57 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '569'
-    body:
-      encoding: UTF-8
-      string: '{"_id":"~90152","id":"~90152","createdBy":"test@example.com","updatedBy":null,"createdAt":1616303516643,"updatedAt":null,"_type":"case","caseId":20,"title":"test
-        case","description":"test case","severity":2,"startDate":1616303516571,"endDate":null,"impactStatus":null,"resolutionStatus":null,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"Open","summary":null,"owner":"test@example.com","customFields":{},"stats":{},"permissions":["manageShare","manageAnalyse","manageTask","manageCase","managePage","manageObservable","manageAlert","accessTheHiveFS","manageAction"]}'
-  recorded_at: Sun, 21 Mar 2021 05:11:57 GMT
-recorded_with: VCR 6.0.0
+  - request:
+      method: post
+      uri: http://<API_ENDPOINT>:9000/api/v1/case
+      body:
+        encoding: UTF-8
+        string: '{"title":"test case","description":"test case"}'
+      headers:
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+        Host:
+          - "<API_ENDPOINT>:9000"
+        Content-Type:
+          - application/json
+    response:
+      status:
+        code: 201
+        message: Created
+      headers:
+        Trace-Id:
+          - fa319e2e44e3ecbe
+        Request-Time:
+          - "1000"
+        Date:
+          - Sat, 14 May 2022 23:51:58 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "591"
+      body:
+        encoding: UTF-8
+        string:
+          '{"_id":"~3817560","_type":"Case","_createdBy":"test@example.com","_createdAt":1652572317738,"number":2,"title":"test
+          case","description":"test case","severity":2,"startDate":1652572317715,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"New","stage":"New","assignee":"test@example.com","customFields":[],"userPermissions":["manageTask","manageComment","manageProcedure","managePage","manageObservable","manageAlert","accessTheHiveFS","manageKnowledgeBase","manageAction","manageShare","manageAnalyse","manageCustomEvent","manageCase"],"extraData":{},"newDate":1652572317715,"timeToDetect":0}'
+    recorded_at: Sat, 14 May 2022 23:51:58 GMT
+  - request:
+      method: get
+      uri: http://<API_ENDPOINT>:9000/api/v1/case/~3817560
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+        Host:
+          - "<API_ENDPOINT>:9000"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Trace-Id:
+          - 0a2426cbc2381152
+        Request-Time:
+          - "193"
+        Date:
+          - Sat, 14 May 2022 23:51:58 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "591"
+      body:
+        encoding: UTF-8
+        string:
+          '{"_id":"~3817560","_type":"Case","_createdBy":"test@example.com","_createdAt":1652572317738,"number":2,"title":"test
+          case","description":"test case","severity":2,"startDate":1652572317715,"tags":[],"flag":false,"tlp":2,"pap":2,"status":"New","stage":"New","assignee":"test@example.com","customFields":[],"userPermissions":["manageTask","manageComment","manageProcedure","managePage","manageObservable","manageAlert","accessTheHiveFS","manageKnowledgeBase","manageAction","manageShare","manageAnalyse","manageCustomEvent","manageCase"],"extraData":{},"newDate":1652572317715,"timeToDetect":0}'
+    recorded_at: Sat, 14 May 2022 23:51:58 GMT
+recorded_with: VCR 6.1.0
