@@ -19,11 +19,11 @@ gem install hachi
 
 Hachi tries to load API settings from `ENV` by default. Or you can set them manually.
 
-| Name         | Default                     | Desc.                                          |
-|--------------|-----------------------------|------------------------------------------------|
-| api_key      | ENV["THEHIVE_API_KEY"]      | TheHive API key                                |
-| api_endpoint | ENV["THEHIVE_API_ENDPOINT"] | TheHive API endpoint                           |
-| api_version  | ENV["THEHIVE_API_VERSION"]  | TheHive API version (`nil` for v4, `v1` for v5 |
+| Name         | Default                     | Desc.                                           |
+|--------------|-----------------------------|-------------------------------------------------|
+| api_key      | ENV["THEHIVE_API_KEY"]      | TheHive API key                                 |
+| api_endpoint | ENV["THEHIVE_API_ENDPOINT"] | TheHive API endpoint                            |
+| api_version  | ENV["THEHIVE_API_VERSION"]  | TheHive API version (`nil` for v4, `v1` for v5) |
 
 ```ruby
 require "hachi"
